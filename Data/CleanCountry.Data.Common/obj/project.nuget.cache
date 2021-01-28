@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "o/FLx73P+BtHECVkWVDIPbSqNKqUIGZZOBSregIcSt9l88z0RblXfKL9a8iYJ3eX80Qis4qE5hoQR2IzKDhJrA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Data\\CleanCountry.Data.Common\\CleanCountry.Data.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ventcy\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\Ventcy\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",
+    "C:\\Users\\Ventcy\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -12,25 +12,79 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #8be8e3;">
     <div class="container">
-        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+            CleanC<img src="/images/CleanCountry.png" alt="can't load" width="40" height="40"/>untry
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
             <partial name="_LoginPartial" />
-            <ul class="navbar-nav flex-grow-1">
+            <ul class="navbar-nav flex-grow-1 justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    @if (this.ViewData["Title"] == "Home Page")
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="/images/home active.png" alt="can't load" width="20" height="20" />
+                            Home
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="/images/home.png" alt="can't load" width="20" height="20" />
+                            Home
+                        </a>
+                    }
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Index">Projects</a>
+                    @if (this.ViewData["Title"] == "Projects")
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Index">
+                            <img src="/images/list-text active.png" alt="can't load" width="20" height="20" />
+                            Projects
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Index">
+                            <img src="/images/list-text.png" alt="can't load" width="20" height="20" />
+                            Projects
+                        </a>
+                    }
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Celendar" asp-action="Index">Celendar</a>
+                    @if (this.ViewData["Title"] == "Celendar")
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Celendar" asp-action="Index">
+                            <img src="/images/calendar active.png" alt="can't load" width="20" height="20" />
+                            Celendar
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Celendar" asp-action="Index">
+                            <img src="/images/calendar.png" alt="can't load" width="20" height="20" />
+                            Celendar
+                        </a>
+                    }
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
+                    @if (this.ViewData["Title"] == "Settings")
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">
+                            <img src="/images/settings active.png" alt="can't load" width="20" height="20" />
+                            Settings
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">
+                            <img src="/images/settings.png" alt="can't load" width="20" height="20" />
+                            Settings
+                        </a>
+                    }
                 </li>
             </ul>
         </div>

@@ -205,17 +205,22 @@ tr:first-child:not(.current-week) .date {
     }
 }
 
-/*nov kod*/
-
 .navAnimated {
     border-bottom: 1px solid black;
+    font-weight: bold;
 }
-.projectAnimated {
-    animation-name: projectAnimation;
+
+.navAnimated .nav-icon{
+    animation-name: scaleAnimation;
     animation-duration: 1s;
 }
 
-@keyframes projectAnimation {
+.projectAnimated {
+    animation-name: scaleAnimation;
+    animation-duration: 1s;
+}
+
+@keyframes scaleAnimation {
     0% {
         transform: scale(0);
     }
@@ -223,4 +228,4 @@ tr:first-child:not(.current-week) .date {
     100% {
         transform: scale(1);
     }
-}
+}    

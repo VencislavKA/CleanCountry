@@ -9553,25 +9553,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ventcy\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Ibryam\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web\\CleanCountry.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web\\CleanCountry.Web.csproj",
       "projectName": "CleanCountry.Web",
-      "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web\\CleanCountry.Web.csproj",
-      "packagesPath": "C:\\Users\\Ventcy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web\\obj\\",
+      "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web\\CleanCountry.Web.csproj",
+      "packagesPath": "C:\\Users\\Ibryam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ventcy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ibryam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -9585,32 +9583,32 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\CleanCountry.Common\\CleanCountry.Common.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\CleanCountry.Common\\CleanCountry.Common.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\CleanCountry.Common\\CleanCountry.Common.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\CleanCountry.Common\\CleanCountry.Common.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Data\\CleanCountry.Data.Models\\CleanCountry.Data.Models.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Data\\CleanCountry.Data.Models\\CleanCountry.Data.Models.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Data\\CleanCountry.Data.Models\\CleanCountry.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Data\\CleanCountry.Data.Models\\CleanCountry.Data.Models.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Data\\CleanCountry.Data\\CleanCountry.Data.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Data\\CleanCountry.Data\\CleanCountry.Data.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Data\\CleanCountry.Data\\CleanCountry.Data.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Data\\CleanCountry.Data\\CleanCountry.Data.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Data\\CleanCountry.Services.Data.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Data\\CleanCountry.Services.Data.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Data\\CleanCountry.Services.Data.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Data\\CleanCountry.Services.Data.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Messaging\\CleanCountry.Services.Messaging.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Messaging\\CleanCountry.Services.Messaging.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Messaging\\CleanCountry.Services.Messaging.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Messaging\\CleanCountry.Services.Messaging.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services\\CleanCountry.Services.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services\\CleanCountry.Services.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services\\CleanCountry.Services.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services\\CleanCountry.Services.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.Infrastructure\\CleanCountry.Web.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.Infrastructure\\CleanCountry.Web.Infrastructure.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web.Infrastructure\\CleanCountry.Web.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web.Infrastructure\\CleanCountry.Web.Infrastructure.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj"
             }
           }
         }
@@ -9687,7 +9685,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

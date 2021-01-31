@@ -10,3 +10,15 @@ C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Models\obj\
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.csproj.CopyComplete
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.dll
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.pdb
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\bin\Debug\netstandard2.1\CleanCountry.Data.Models.deps.json
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\bin\Debug\netstandard2.1\CleanCountry.Data.Models.dll
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\bin\Debug\netstandard2.1\CleanCountry.Data.Models.pdb
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\bin\Debug\netstandard2.1\CleanCountry.Data.Common.dll
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\bin\Debug\netstandard2.1\CleanCountry.Data.Common.pdb
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.csprojAssemblyReference.cache
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.AssemblyInfo.cs
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.csproj.CopyComplete
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.dll
+C:\Users\Ibryam\Desktop\CleanCountry\Data\CleanCountry.Data.Models\obj\Debug\netstandard2.1\CleanCountry.Data.Models.pdb

@@ -7,3 +7,12 @@ C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services\obj
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.csproj.CoreCompileInputs.cache
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.dll
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.pdb
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\bin\Debug\netstandard2.1\CleanCountry.Services.deps.json
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\bin\Debug\netstandard2.1\CleanCountry.Services.dll
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\bin\Debug\netstandard2.1\CleanCountry.Services.pdb
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.csprojAssemblyReference.cache
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.AssemblyInfoInputs.cache
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.AssemblyInfo.cs
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.csproj.CoreCompileInputs.cache
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.dll
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.pdb

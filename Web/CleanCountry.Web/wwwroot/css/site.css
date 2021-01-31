@@ -228,4 +228,29 @@ tr:first-child:not(.current-week) .date {
     100% {
         transform: scale(1);
     }
-}    
+}
+
+#project {
+    width: 85%;
+    height: 100%;
+    background: #8BE8E3;
+    margin: 3%;
+    margin-left: 15%;
+    margin-top: 7%;
+    margin-right: 20%;
+    border-radius: 5%;
+}
+
+#people {
+    width: 20%;
+    height: 100%;
+    margin: 3%;
+    display: inline-block;
+}
+
+#chat {
+    width: 65%;
+    height: 100%;
+    margin: 3%;
+    display: inline-block;
+}

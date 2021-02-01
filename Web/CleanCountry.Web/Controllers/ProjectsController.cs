@@ -13,5 +13,15 @@
         {
             return this.View();
         }
+
+        public IActionResult MyProjects()
+        {
+            return this.View();
+        }
+
+        public IActionResult Project()
+        {
+            return this.View();
+        }
     }
 }

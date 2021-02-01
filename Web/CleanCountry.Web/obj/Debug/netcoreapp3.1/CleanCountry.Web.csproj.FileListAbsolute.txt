@@ -922,3 +922,4 @@ C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\CleanCountry.Web.pdb
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\CleanCountry.Web.genruntimeconfig.cache
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Project\Index.cshtml.g.cs
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Projects\Project.cshtml.g.cs

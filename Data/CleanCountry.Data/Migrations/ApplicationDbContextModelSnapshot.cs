@@ -117,6 +117,9 @@ namespace CleanCountry.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SettingsId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -135,6 +138,8 @@ namespace CleanCountry.Data.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("SettingsId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -273,6 +278,13 @@ namespace CleanCountry.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("CleanCountry.Data.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("CleanCountry.Data.Models.Setting", "Settings")
+                        .WithMany()
+                        .HasForeignKey("SettingsId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

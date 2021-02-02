@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanCountry.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210131172745_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210202093552_InitialCereate")]
+    partial class InitialCereate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -119,6 +119,9 @@ namespace CleanCountry.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SettingsId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -137,6 +140,8 @@ namespace CleanCountry.Data.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("SettingsId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -275,6 +280,13 @@ namespace CleanCountry.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("CleanCountry.Data.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("CleanCountry.Data.Models.Setting", "Settings")
+                        .WithMany()
+                        .HasForeignKey("SettingsId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

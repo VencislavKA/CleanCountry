@@ -4,9 +4,9 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="row">
-    <div class="container col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+<div class="row mt-5">
+    <div class="card col-md-4 m-auto shadow-lg" style="background:#e6f7f6">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="m-2">
             <h1 class="text-center">Регистрация</h1>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>

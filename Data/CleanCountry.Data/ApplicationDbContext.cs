@@ -26,7 +26,7 @@
 
         public DbSet<Setting> Settings { get; set; }
 
-        public DbSet<Event> Events { get; set; }
+        public DbSet<Project> Events { get; set; }
 
         public DbSet<Chat> Chats { get; set; }
 

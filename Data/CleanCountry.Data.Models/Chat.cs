@@ -15,6 +15,6 @@
         public string Message { get; set; }
 
         [Required]
-        public Event Event { get; set; }
+        public Project Event { get; set; }
     }
 }

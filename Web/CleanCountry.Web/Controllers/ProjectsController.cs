@@ -23,5 +23,10 @@
         {
             return this.View();
         }
+
+        public IActionResult AddProject()
+        {
+            return this.View();
+        }
     }
 }

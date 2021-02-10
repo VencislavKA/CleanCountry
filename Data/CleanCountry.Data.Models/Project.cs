@@ -5,10 +5,13 @@
 
     using CleanCountry.Data.Common.Models;
 
-    public class Event : BaseDeletableModel<int>
+    public class Project : BaseDeletableModel<int>
     {
         [Required]
         public string Title { get; set; }
+
+        [Required]
+        public string Images { get; set; }
 
         [Required]
         public string Description { get; set; }

@@ -36,6 +36,7 @@ namespace CleanCountry.Data.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Title = table.Column<string>(nullable: false),
+                    Images = table.Column<string>(nullable: false),
                     Description = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
@@ -106,14 +107,14 @@ namespace CleanCountry.Data.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     SettingsId = table.Column<int>(nullable: true),
-                    EventId = table.Column<int>(nullable: true)
+                    ProjectId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUsers_Events_EventId",
-                        column: x => x.EventId,
+                        name: "FK_AspNetUsers_Events_ProjectId",
+                        column: x => x.ProjectId,
                         principalTable: "Events",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -274,11 +275,6 @@ namespace CleanCountry.Data.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_EventId",
-                table: "AspNetUsers",
-                column: "EventId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_AspNetUsers_IsDeleted",
                 table: "AspNetUsers",
                 column: "IsDeleted");
@@ -294,6 +290,11 @@ namespace CleanCountry.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_ProjectId",
+                table: "AspNetUsers",
+                column: "ProjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUsers_SettingsId",

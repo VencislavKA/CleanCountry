@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanCountry.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210204075045_InitialCreate")]
+    [Migration("20210210202023_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,9 +87,6 @@ namespace CleanCountry.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("EventId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -119,6 +116,9 @@ namespace CleanCountry.Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -134,8 +134,6 @@ namespace CleanCountry.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EventId");
-
                     b.HasIndex("IsDeleted");
 
                     b.HasIndex("NormalizedEmail")
@@ -145,6 +143,8 @@ namespace CleanCountry.Data.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("ProjectId");
 
                     b.HasIndex("SettingsId");
 
@@ -193,7 +193,7 @@ namespace CleanCountry.Data.Migrations
                     b.ToTable("Chats");
                 });
 
-            modelBuilder.Entity("CleanCountry.Data.Models.Event", b =>
+            modelBuilder.Entity("CleanCountry.Data.Models.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -207,6 +207,10 @@ namespace CleanCountry.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Images")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -365,9 +369,9 @@ namespace CleanCountry.Data.Migrations
 
             modelBuilder.Entity("CleanCountry.Data.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("CleanCountry.Data.Models.Event", null)
+                    b.HasOne("CleanCountry.Data.Models.Project", null)
                         .WithMany("Partisipants")
-                        .HasForeignKey("EventId");
+                        .HasForeignKey("ProjectId");
 
                     b.HasOne("CleanCountry.Data.Models.Setting", "Settings")
                         .WithMany()
@@ -376,7 +380,7 @@ namespace CleanCountry.Data.Migrations
 
             modelBuilder.Entity("CleanCountry.Data.Models.Chat", b =>
                 {
-                    b.HasOne("CleanCountry.Data.Models.Event", "Event")
+                    b.HasOne("CleanCountry.Data.Models.Project", "Event")
                         .WithMany()
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Restrict)

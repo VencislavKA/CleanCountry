@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CleanCountry.Data.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitilaCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,8 +35,8 @@ namespace CleanCountry.Data.Migrations
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Title = table.Column<string>(nullable: false),
-                    Images = table.Column<string>(nullable: false),
+                    Title = table.Column<string>(maxLength: 30, nullable: false),
+                    Images = table.Column<string>(maxLength: 500, nullable: false),
                     Description = table.Column<string>(nullable: false)
                 },
                 constraints: table =>

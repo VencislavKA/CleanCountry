@@ -8,9 +8,13 @@
     public class Project : BaseDeletableModel<int>
     {
         [Required]
+        [MinLength(5)]
+        [MaxLength(30)]
         public string Title { get; set; }
 
         [Required]
+        [MinLength(30)]
+        [MaxLength(500)]
         public string Images { get; set; }
 
         [Required]

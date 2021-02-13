@@ -269,10 +269,6 @@ tr:first-child:not(.current-week) .date {
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial;
-    font-size: 18px;
-}
 
 #cont {
     width: 750px;
@@ -288,14 +284,6 @@ aside {
     width: 260px;
     height: 800px;
     background-color: #3b3e49;
-    display: inline-block;
-    font-size: 15px;
-    vertical-align: top;
-}
-
-main {
-    width: 490px;
-    height: 800px;
     display: inline-block;
     font-size: 15px;
     vertical-align: top;

@@ -228,7 +228,7 @@ namespace CleanCountry.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Events");
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("CleanCountry.Data.Models.Setting", b =>

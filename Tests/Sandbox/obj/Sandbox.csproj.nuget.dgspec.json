@@ -346,6 +346,9 @@
               },
               "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj"
+              },
+              "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj"
               }
             }
           }
@@ -698,6 +701,82 @@
               "privateAssets": "none"
             },
             "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj",
+        "projectName": "CleanCountry.Web.ViewModels",
+        "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\CleanCountry.Web.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\Ventcy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ventcy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Data\\CleanCountry.Data.Models\\CleanCountry.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Data\\CleanCountry.Data.Models\\CleanCountry.Data.Models.csproj"
+              },
+              "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
               "privateAssets": "all"
             }
           },

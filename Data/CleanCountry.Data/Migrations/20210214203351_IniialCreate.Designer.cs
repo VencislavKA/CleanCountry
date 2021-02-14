@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanCountry.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210213194904_InitilaCreate")]
-    partial class InitilaCreate
+    [Migration("20210214203351_IniialCreate")]
+    partial class IniialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -230,7 +230,7 @@ namespace CleanCountry.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Events");
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("CleanCountry.Data.Models.Setting", b =>

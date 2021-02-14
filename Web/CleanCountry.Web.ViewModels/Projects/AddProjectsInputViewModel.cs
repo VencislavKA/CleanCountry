@@ -2,6 +2,8 @@
 {
     using System.ComponentModel.DataAnnotations;
 
+    using Microsoft.AspNetCore.Http;
+
     public class AddProjectsInputViewModel
     {
         [Required(ErrorMessage = "Заглавието е задължително поле")]
@@ -14,7 +16,8 @@
         [Display(Name = "Описание")]
         public string Description { get; set; }
 
-        [Required]
-        public string Image { get; set; }
+        [Required(ErrorMessage = "Снимката е задължителна" )]
+        [Display(Name = "Изберете снимка за проекта")]
+        public IFormFile Image { get; set; }
     }
 }

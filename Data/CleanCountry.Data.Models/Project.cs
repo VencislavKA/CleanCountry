@@ -7,6 +7,11 @@
 
     public class Project : BaseDeletableModel<int>
     {
+        public Project()
+        {
+            this.Partisipants = new List<ApplicationUser>();
+        }
+
         [Required]
         [MinLength(5)]
         [MaxLength(30)]

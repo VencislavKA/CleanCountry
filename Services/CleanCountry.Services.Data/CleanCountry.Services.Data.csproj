@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\CleanCountry.Data.Common\CleanCountry.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\CleanCountry.Data.Models\CleanCountry.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\CleanCountry.Web.ViewModels\CleanCountry.Web.ViewModels.csproj" />
     <ProjectReference Include="..\CleanCountry.Services.Mapping\CleanCountry.Services.Mapping.csproj" />
   </ItemGroup>
 

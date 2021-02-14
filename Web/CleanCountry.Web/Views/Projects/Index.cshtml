@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Project>
 @{
     ViewData["Title"] = "Projects";
 }
@@ -6,63 +6,17 @@
 <h2>Проекти</h2>
 <hr/>
 <div class="card-columns">
-    <div class="card projectAnimated" href="">
-        <img class="card-img-top" src="/images/CleanCountry.png" alt="Card image cap">
-        <div class="card-body text-center">
-            <h5 class="card-title">Заглавие на проекта</h5>
-            <p class="card-text">Тук е краткото описание на проекта можем да го направим като вземем пътвите две изречение от основния текст на обявата или да ги караме да го пишат те при създаването</p>
-            <a href="/Projects/Project" class="btn btn-primary w-100">Повече информация</a>
+    @foreach (var project in Model)
+    {
+        <div class="card projectAnimated" href="">
+            <img class="card-img-top" src="@project.Images" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">@project.Title</h5>
+                <p class="card-text">@project.Description</p>
+                <a href="/Projects/Project" class="btn btn-primary w-100">Повече информация</a>
+            </div>
         </div>
-    </div>
-    <div class="card projectAnimated">
-        <img class="card-img-top" src="/images/CleanCountry.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-    </div>
-    <div class="card projectAnimated">
-        <img class="card-img-top" src="/images/CleanCountry.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-    </div>
-    <div class="card projectAnimated">
-        <img class="card-img-top" src="/images/CleanCountry.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-    </div>
-    <div class="card projectAnimated">
-        <img class="card-img-top" src="/images/CleanCountry.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-    </div>
-    <div class="card projectAnimated">
-        <img class="card-img-top" src="/images/CleanCountry.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-    </div>
-    <div class="card projectAnimated">
-        <img class="card-img-top" src="/images/CleanCountry.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-    </div>
-    <div class="card projectAnimated">
-        <img class="card-img-top" src="/images/CleanCountry.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-    </div>
+    }
 </div>
 <nav>
     <ul class="pagination justify-content-center">

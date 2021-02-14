@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CleanCountry.Data.Migrations
 {
-    public partial class InitilaCreate : Migration
+    public partial class IniialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,7 +26,7 @@ namespace CleanCountry.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Events",
+                name: "Projects",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -41,7 +41,7 @@ namespace CleanCountry.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Events", x => x.Id);
+                    table.PrimaryKey("PK_Projects", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,9 +113,9 @@ namespace CleanCountry.Data.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUsers_Events_ProjectId",
+                        name: "FK_AspNetUsers_Projects_ProjectId",
                         column: x => x.ProjectId,
-                        principalTable: "Events",
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -229,9 +229,9 @@ namespace CleanCountry.Data.Migrations
                 {
                     table.PrimaryKey("PK_Chats", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Chats_Events_EventId",
+                        name: "FK_Chats_Projects_EventId",
                         column: x => x.EventId,
-                        principalTable: "Events",
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -317,8 +317,8 @@ namespace CleanCountry.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Events_IsDeleted",
-                table: "Events",
+                name: "IX_Projects_IsDeleted",
+                table: "Projects",
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
@@ -354,7 +354,7 @@ namespace CleanCountry.Data.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Events");
+                name: "Projects");
 
             migrationBuilder.DropTable(
                 name: "Settings");

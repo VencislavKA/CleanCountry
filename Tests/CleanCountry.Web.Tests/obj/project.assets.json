@@ -10838,25 +10838,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ventcy\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Ibryam\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Tests\\CleanCountry.Web.Tests\\CleanCountry.Web.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Tests\\CleanCountry.Web.Tests\\CleanCountry.Web.Tests.csproj",
       "projectName": "CleanCountry.Web.Tests",
-      "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Tests\\CleanCountry.Web.Tests\\CleanCountry.Web.Tests.csproj",
-      "packagesPath": "C:\\Users\\Ventcy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Tests\\CleanCountry.Web.Tests\\obj\\",
+      "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Tests\\CleanCountry.Web.Tests\\CleanCountry.Web.Tests.csproj",
+      "packagesPath": "C:\\Users\\Ibryam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Tests\\CleanCountry.Web.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ventcy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ibryam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -10870,8 +10868,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web\\CleanCountry.Web.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Web\\CleanCountry.Web\\CleanCountry.Web.csproj"
+            "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web\\CleanCountry.Web.csproj": {
+              "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Web\\CleanCountry.Web\\CleanCountry.Web.csproj"
             }
           }
         }
@@ -10936,7 +10934,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

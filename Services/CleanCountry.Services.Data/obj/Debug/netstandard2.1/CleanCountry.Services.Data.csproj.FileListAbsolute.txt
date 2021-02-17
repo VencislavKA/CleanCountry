@@ -32,3 +32,5 @@ C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services.Data\obj\Deb
 C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services.Data\obj\Debug\netstandard2.1\CleanCountry.Services.Data.pdb
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Data\bin\Debug\netstandard2.1\CleanCountry.Web.ViewModels.dll
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Data\bin\Debug\netstandard2.1\CleanCountry.Web.ViewModels.pdb
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services.Data\bin\Debug\netstandard2.1\CleanCountry.Web.ViewModels.dll
+C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services.Data\bin\Debug\netstandard2.1\CleanCountry.Web.ViewModels.pdb

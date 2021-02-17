@@ -499,7 +499,6 @@ C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
-C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Identity.dll
@@ -619,7 +618,6 @@ C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
-C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
@@ -946,3 +944,5 @@ C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Projects\Chat.cshtml.g.cs
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll

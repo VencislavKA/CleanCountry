@@ -30,5 +30,7 @@
         }
 
         public ICollection<Project> GetAllProjects() => this.Repository.AllAsNoTracking().ToList();
+
+        public Project GetProject(int id) => this.GetAllProjects().Single(x => x.Id == id);
     }
 }

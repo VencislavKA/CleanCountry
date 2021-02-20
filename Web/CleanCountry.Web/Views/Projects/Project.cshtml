@@ -1,24 +1,21 @@
-﻿@{
+﻿@model Project;
+@{
     ViewData["Title"] = "Project";
 }
 
-<section id="project">
-    <div id="people">
-        <p>profile pic: people</p>
-        <p>profile pic: people</p>
-        <p>profile pic: people</p>
-        <p>profile pic: people</p>
-        <p>profile pic: people</p>
-        <p>profile pic: people</p>
+<div class='card-panel white lighten-3' style='margin-left: 17%; transform: translate(-10%);'>
+    <h3 style='text-align: center;'>@Model.Title</h3>
+    <div style='text-align: center;'>
+        <img src="@Model.Images" alt="@Model.Title" />
     </div>
-    <div id="chat">
-        <p>chat</p>
-        <p>chat</p>
-        <p>chat</p>
-        <p>chat</p>
-        <p>chat</p>
-        <p>chat</p>
-    </div>
-    <а class="btn btn-outline-info"  >chat</a>
-</section>
+</div>
+<div class='card-panel grey lighten-3' style='margin-left: 17%; transform: translate(-10%);'>
+    <h4 style='text-align: center;'>Описание</h4>
+    <p>@Model.Description</p>
+</div>
+<div class='card-panel grey lighten-3' style='margin-left: 17%; transform: translate(-10%);'>
+    <h4 style='text-align: center;'>Искаш да се присъединиш?</h4>
+    <a class="btn btn-info float-xl-right" asp-controller="Projects" asp-action="Join">Присъедини се!</a>
+</div>
 
+ 

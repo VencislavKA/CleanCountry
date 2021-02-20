@@ -10,5 +10,7 @@
         public Task<string> AddProject(string title, string description, string imgPath);
 
         public ICollection<Project> GetAllProjects();
+
+        public Project GetProject(int id);
     }
 }

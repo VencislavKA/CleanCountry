@@ -39,9 +39,10 @@
             return this.View();
         }
 
-        public IActionResult Project()
+        public IActionResult Project(int id)
         {
-            return this.View();
+            var project = this.Service.GetProject(id);
+            return this.View(project);
         }
 
         public IActionResult AddProject()

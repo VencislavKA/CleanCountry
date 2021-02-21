@@ -4,30 +4,41 @@
 }
 <a class="btn btn-info float-right" asp-controller="Projects" asp-action="AddProject">Добави проект</a>
 <h2>Проекти</h2>
-<hr/>
-<div class="card-columns">
-    @foreach (var project in Model)
-    {
-        <div class="card projectAnimated" href="">
-            <img class="card-img-top" src="@project.Images" alt="Card image cap">
-            <div class="card-body text-center">
-                <h5 class="card-title">@project.Title</h5>
-                <p class="card-text">@project.Description</p>
-                <a href="/Projects/Project/@project.Id" class="btn btn-primary w-100">Повече информация</a>
-            </div>
+<hr />
+@if (Model.Count() == 0)
+{
+    <div class="card projectAnimated mt-4">
+        <div class="card-body text-center">
+            <h5 class="card-title">🙃 До момента няма добавени проекти 🙃</h5>
+            <p>🥇 Ти можеш да си първи 🥇</p>
         </div>
-    }
-</div>
-<nav>
-    <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-        </li>
-    </ul>
-</nav>
+    </div>
+}
+else
+{
+    <div class="card-columns">
+        @foreach (var project in Model)
+        {
+            <div class="card projectAnimated" href="/Projects/Project/@project.Id">
+                <img class="card-img-top" src="@project.Images" alt="Card image cap">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@project.Title</h5>
+                    <p class="card-text">@project.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+    <nav>
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+}

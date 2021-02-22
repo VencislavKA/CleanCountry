@@ -12,6 +12,8 @@
             this.Partisipants = new List<ApplicationUser>();
         }
 
+        public ApplicationUser Creator { get; set; }
+
         [Required]
         [MinLength(5)]
         [MaxLength(30)]

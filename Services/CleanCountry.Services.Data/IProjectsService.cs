@@ -7,10 +7,12 @@
 
     public interface IProjectsService
     {
-        public Task<string> AddProject(string title, string description, string imgPath);
+        public Task<string> AddProject(string title, string description, string imgPath, Task<ApplicationUser> creator);
 
         public ICollection<Project> GetAllProjects();
 
         public Project GetProject(int id);
+
+        public ICollection<Project> GetMyProjects(string id);
     }
 }

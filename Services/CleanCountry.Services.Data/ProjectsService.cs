@@ -17,11 +17,11 @@
 
         public IRepository<Project> Repository { get; }
 
-        public async Task<string> AddProject(string title, string description, string imgPath)
+        public async Task<string> AddProject(string title, string description, string imgPath, Task<ApplicationUser> creator)
         {
             if (title != null && description != null && imgPath != null)
             {
-                await this.Repository.AddAsync(new Project { Title = title, Description = description, Images = imgPath });
+                await this.Repository.AddAsync(new Project { Title = title, Description = description, Images = imgPath, Creator = creator.Result });
                 await this.Repository.SaveChangesAsync();
                 return string.Empty;
             }
@@ -32,5 +32,7 @@
         public ICollection<Project> GetAllProjects() => this.Repository.AllAsNoTracking().ToList();
 
         public Project GetProject(int id) => this.GetAllProjects().Single(x => x.Id == id);
+
+        public ICollection<Project> GetMyProjects(string id) => this.GetAllProjects().Where(x => x.Creator.Id == id).ToList();
     }
 }

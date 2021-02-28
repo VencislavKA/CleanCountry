@@ -1,6 +1,44 @@
-﻿@{
+﻿@model List<Project>
+@{
     ViewData["Title"] = "MyProjects";
 }
 
 <h1>Участия</h1>
-
+@if (Model.Count() == 0)
+{
+    <div class="card projectAnimated mt-4">
+        <div class="card-body text-center">
+            <h5 class="card-title">🙃 До момента не участвате в никакви проекти 🙃</h5>
+            <p>🥇 можеш да се включиш сега! 🥇</p>
+        </div>
+    </div>
+}
+else
+{
+<div class="card-columns">
+    @foreach (var project in Model)
+    {
+        <div class="card projectAnimated">
+            <img class="card-img-top" src="@project.Images" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">@project.Title</h5>
+                <p class="card-text">@project.Description</p>
+                <a href="/Projects/Project/@project.Id" class="btn btn-primary w-100">Повече информация</a>
+            </div>
+        </div>
+    }
+</div>
+<nav>
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+}

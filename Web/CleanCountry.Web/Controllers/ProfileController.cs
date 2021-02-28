@@ -5,13 +5,23 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using CleanCountry.Data.Models;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
     public class ProfileController : Controller
     {
+        public UserManager<ApplicationUser> UserManager { get; }
+
+        public ProfileController(UserManager<ApplicationUser> userManager)
+        {
+            this.UserManager = userManager;
+        }
+
         public IActionResult Index()
         {
-            return this.View();
+            var user = this.UserManager.GetUserAsync(this.User);
+            return this.View(user.Result);
         }
     }
 }

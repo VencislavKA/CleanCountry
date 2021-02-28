@@ -7,11 +7,13 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using CleanCountry.Data.Models;
     using CleanCountry.Services.Data;
     using CleanCountry.Web.ViewModels.Projects;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
     public class ProjectsController : BaseController
@@ -21,11 +23,14 @@
         [Obsolete]
         public IHostingEnvironment Environment { get; }
 
+        public UserManager<ApplicationUser> UserManager { get; }
+
         [Obsolete]
-        public ProjectsController(IProjectsService service, IHostingEnvironment environment)
+        public ProjectsController(IProjectsService service, IHostingEnvironment environment, UserManager<ApplicationUser> userManager)
         {
             this.Service = service;
             this.Environment = environment;
+            this.UserManager = userManager;
         }
 
         public IActionResult Index()
@@ -34,9 +39,11 @@
             return this.View(projects);
         }
 
+        [Authorize]
         public IActionResult MyProjects()
         {
-            return this.View();
+            var projects = this.Service.GetMyProjects(this.UserManager.GetUserId(this.User));
+            return this.View(projects);
         }
 
         public IActionResult Project(int id)
@@ -59,8 +66,8 @@
             {
                 return this.View();
             }
-
-            string result = await this.Service.AddProject(model.Title, model.Description, imgPath);
+            var creator = this.UserManager.GetUserAsync(this.User);
+            string result = await this.Service.AddProject(model.Title, model.Description, imgPath, creator);
             if (result != null)
             {
                 return this.RedirectToAction("Index");
@@ -69,10 +76,6 @@
             return this.View();
         }
 
-        public IActionResult Chat()
-        {
-            return this.View();
-        }
 
         [Obsolete]
         [Authorize]

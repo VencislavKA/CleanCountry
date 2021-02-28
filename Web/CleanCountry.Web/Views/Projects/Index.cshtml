@@ -19,11 +19,12 @@ else
     <div class="card-columns">
         @foreach (var project in Model)
         {
-            <div class="card projectAnimated" href="/Projects/Project/@project.Id">
+            <div class="card projectAnimated">
                 <img class="card-img-top" src="@project.Images" alt="Card image cap">
                 <div class="card-body text-center">
                     <h5 class="card-title">@project.Title</h5>
                     <p class="card-text">@project.Description</p>
+                    <a href="/Projects/Project/@project.Id" class="btn btn-primary w-100">Повече информация</a>
                 </div>
             </div>
         }

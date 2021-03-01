@@ -1,21 +1,17 @@
-﻿@model Project;
+﻿@model Project
 @{
     ViewData["Title"] = "Project";
 }
-
-<div class='card-panel white lighten-3' style='margin-left: 17%; transform: translate(-10%);'>
-    <h3 style='text-align: center;'>@Model.Title</h3>
-    <div style='text-align: center;'>
-        <img src="@Model.Images" alt="@Model.Title" />
+<div class="card">
+    <div class="card-header mb-3">
+        <h3 class="font-weight-bold text-center">@Model.Title</h3>
+    </div>
+    <img class="card-img w-75 m-auto" src="@Model.Images" alt="@Model.Title" />
+    <h4 class="text-center mt-5">Описание</h4>
+    <p class="text-center">@Model.Description</p>
+    <div class='card-panel grey lighten-3 text-center mb-3'>
+        <h4 class="text-center mt-5">Искаш да се присъединиш?</h4>
+        <p>Участници: @Model.Partisipants.Count()</p>
+        <a class="btn btn-info mt-3" href="/Projects/Join?id=@Model.Id">Присъедини се!</a>
     </div>
 </div>
-<div class='card-panel grey lighten-3' style='margin-left: 17%; transform: translate(-10%);'>
-    <h4 style='text-align: center;'>Описание</h4>
-    <p>@Model.Description</p>
-</div>
-<div class='card-panel grey lighten-3' style='margin-left: 17%; transform: translate(-10%);'>
-    <h4 style='text-align: center;'>Искаш да се присъединиш?</h4>
-    <a class="btn btn-info float-xl-right" asp-controller="Projects" asp-action="Join">Присъедини се!</a>
-</div>
-
- 

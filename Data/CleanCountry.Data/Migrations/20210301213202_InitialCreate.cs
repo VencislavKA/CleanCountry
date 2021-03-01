@@ -156,8 +156,8 @@ namespace CleanCountry.Data.Migrations
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     CreatorId = table.Column<string>(nullable: true),
                     Title = table.Column<string>(maxLength: 30, nullable: false),
-                    Images = table.Column<string>(maxLength: 500, nullable: false),
-                    Description = table.Column<string>(nullable: false)
+                    Images = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(maxLength: 500, nullable: false)
                 },
                 constraints: table =>
                 {

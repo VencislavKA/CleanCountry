@@ -15,6 +15,7 @@
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Data.SqlClient.DataClassification;
 
     public class ProjectsController : BaseController
     {
@@ -40,6 +41,25 @@
         }
 
         [Authorize]
+        public IActionResult Join(int id)
+        {
+            Project project = this.Service.GetProject(id);
+            if (project == null)
+            {
+                // има грешка в id-то и препращаме към страницата с проектите
+                this.RedirectToAction("Index");
+            }
+
+            var result = this.Service.JoinProject(id, this.User.Identity.Name);
+            if (result == null)
+            {
+                this.RedirectToAction("Index");
+            }
+
+            return this.Redirect("/Projects/Project/" + id.ToString());
+        }
+
+        [Authorize]
         public IActionResult MyProjects()
         {
             var projects = this.Service.GetMyProjects(this.UserManager.GetUserId(this.User));
@@ -48,7 +68,13 @@
 
         public IActionResult Project(int id)
         {
-            var project = this.Service.GetProject(id);
+            Project project = this.Service.GetProject(id);
+            if (string.IsNullOrEmpty(project.Title))
+            {
+                // има грешка в id-то и препращаме към страницата с проектите
+                this.RedirectToAction("Index");
+            }
+
             return this.View(project);
         }
 
@@ -66,6 +92,7 @@
             {
                 return this.View();
             }
+
             var creator = this.UserManager.GetUserAsync(this.User);
             string result = await this.Service.AddProject(model.Title, model.Description, imgPath, creator);
             if (result != null)
@@ -75,7 +102,6 @@
 
             return this.View();
         }
-
 
         [Obsolete]
         [Authorize]

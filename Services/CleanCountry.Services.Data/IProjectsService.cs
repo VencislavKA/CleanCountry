@@ -9,6 +9,8 @@
     {
         public Task<string> AddProject(string title, string description, string imgPath, Task<ApplicationUser> creator);
 
+        public Task<string> JoinProject(int projectId, string userName);
+
         public ICollection<Project> GetAllProjects();
 
         public Project GetProject(int id);

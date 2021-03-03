@@ -1,5 +1,6 @@
 ﻿namespace CleanCountry.Data.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -26,6 +27,8 @@
         [MinLength(30)]
         [MaxLength(500)]
         public string Description { get; set; }
+
+        public DateTime Date { get; set; }
 
         [Required]
         public List<ApplicationUser> Partisipants { get; set; }

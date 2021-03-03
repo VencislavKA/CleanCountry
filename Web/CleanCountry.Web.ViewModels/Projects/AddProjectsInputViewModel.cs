@@ -1,7 +1,9 @@
 ﻿namespace CleanCountry.Web.ViewModels.Projects
 {
+    using System;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-
+    using System.Reflection;
     using Microsoft.AspNetCore.Http;
 
     public class AddProjectsInputViewModel
@@ -19,5 +21,9 @@
         [Required(ErrorMessage = "Снимката е задължителна" )]
         [Display(Name = "Изберете снимка за проекта")]
         public IFormFile Image { get; set; }
+
+        [Required(ErrorMessage = "Датата е задължителна")]
+        [DataType(DataType.Date, ErrorMessage = "Датата е не валидна")]
+        public string Date { get; set; }
     }
 }

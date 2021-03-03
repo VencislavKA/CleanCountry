@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanCountry.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210301213202_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210303204210_initialcreate")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -205,6 +205,9 @@ namespace CleanCountry.Data.Migrations
 
                     b.Property<string>("CreatorId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");

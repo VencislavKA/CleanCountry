@@ -13,5 +13,7 @@
         public bool Partisipant { get; set; }
 
         public int PartisipiantCoint { get; set; }
+
+        public string CreatedOn { get; set; }
     }
 }

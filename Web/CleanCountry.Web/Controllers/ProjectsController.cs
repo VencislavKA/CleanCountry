@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Data.SqlTypes;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
@@ -42,16 +43,16 @@
             return this.View(projects);
         }
 
-        public IActionResult Join(int id)
+        public async Task<IActionResult> Join(int id)
         {
-            Project project = this.Service.GetProject(id);
+            Project project = await this.Service.GetProject(id);
             if (project == null)
             {
                 // има грешка в id-то и препращаме към страницата с проектите
                 this.RedirectToAction("Index");
             }
 
-            var result = this.Service.JoinProject(id, this.User.Identity.Name);
+            var result = await this.Service.JoinProject(id, this.User.Identity.Name);
             if (result == null)
             {
                 this.RedirectToAction("Index");
@@ -66,9 +67,9 @@
             return this.View(projects);
         }
 
-        public IActionResult Project(int id)
+        public async Task<IActionResult> Project(int id)
         {
-            Project project = this.Service.GetProject(id);
+            Project project = await this.Service.GetProject(id);
             if (string.IsNullOrEmpty(project.Title))
             {
                 // има грешка в id-то и препращаме към страницата с проектите
@@ -89,6 +90,7 @@
                 Images = project.Images,
                 Partisipant = AmIParticipiant,
                 PartisipiantCoint = project.Partisipants.Count(),
+                CreatedOn = project.CreatedOn.ToString(),
             };
             return this.View(result);
         }
@@ -100,6 +102,7 @@
 
         [HttpPost]
         [Obsolete]
+        [Authorize]
         public async Task<IActionResult> AddProject(AddProjectsInputViewModel model)
         {
             string imgPath = this.StoreFileAsync(model.Image).Result;
@@ -108,8 +111,10 @@
                 return this.View();
             }
 
-            var creator = this.UserManager.GetUserAsync(this.User);
-            string result = await this.Service.AddProject(model.Title, model.Description, imgPath, creator);
+            DateTime Date;
+            DateTime.TryParseExact(model.Date, "yyyy-dd-MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out Date);
+
+            string result = await this.Service.AddProject(model.Title, model.Description, imgPath, this.User.Identity.Name);
             if (result != null)
             {
                 return this.RedirectToAction("Index");

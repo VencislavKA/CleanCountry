@@ -204,6 +204,9 @@ namespace CleanCountry.Data.Migrations
                     b.Property<string>("CreatorId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 

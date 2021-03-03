@@ -6,7 +6,10 @@ a.navbar-brand {
     text-align: center;
     word-break: break-all;
 }
-
+.container-bg {
+    background-color: #E0E0E0;
+    border-radius: 10px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

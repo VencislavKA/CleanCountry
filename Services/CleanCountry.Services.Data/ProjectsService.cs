@@ -57,6 +57,5 @@
         public Project GetProject(int id) => this.Repository.All().Select(x => x).Include(x => x.Partisipants).FirstOrDefault(x => x.Id == id);
 
         public ICollection<Project> GetMyProjects(string id) => this.Repository.AllAsNoTracking().Where(x => x.Creator.Id == id).Include(x => x.Creator).ToList();
-
     }
 }

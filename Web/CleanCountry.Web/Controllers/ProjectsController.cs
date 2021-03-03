@@ -17,6 +17,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Data.SqlClient.DataClassification;
 
+    [Authorize]
     public class ProjectsController : BaseController
     {
         public IProjectsService Service { get; }
@@ -34,13 +35,13 @@
             this.UserManager = userManager;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var projects = this.Service.GetAllProjects();
             return this.View(projects);
         }
 
-        [Authorize]
         public IActionResult Join(int id)
         {
             Project project = this.Service.GetProject(id);
@@ -56,10 +57,9 @@
                 this.RedirectToAction("Index");
             }
 
-            return this.Redirect("/Projects/Project/" + id.ToString());
+            return this.Redirect("/Projects/Project?id=" + id.ToString());
         }
 
-        [Authorize]
         public IActionResult MyProjects()
         {
             var projects = this.Service.GetMyProjects(this.UserManager.GetUserId(this.User));
@@ -75,7 +75,22 @@
                 this.RedirectToAction("Index");
             }
 
-            return this.View(project);
+            bool AmIParticipiant = false;
+            if (project.Partisipants.Contains(this.UserManager.GetUserAsync(this.User).Result))
+            {
+                AmIParticipiant = true;
+            }
+
+            var result = new ProjectViewModel()
+            {
+                id = project.Id,
+                Title = project.Title,
+                Description = project.Description,
+                Images = project.Images,
+                Partisipant = AmIParticipiant,
+                PartisipiantCoint = project.Partisipants.Count(),
+            };
+            return this.View(result);
         }
 
         public IActionResult AddProject()

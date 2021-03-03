@@ -1,8 +1,9 @@
-﻿@model Project
+﻿@model ProjectViewModel
 @{
     ViewData["Title"] = "Project";
 }
-<div class="card">
+
+<div class="card w-75 m-auto projectAnimated">
     <div class="card-header mb-3">
         <h3 class="font-weight-bold text-center">@Model.Title</h3>
     </div>
@@ -10,8 +11,15 @@
     <h4 class="text-center mt-5">Описание</h4>
     <p class="text-center">@Model.Description</p>
     <div class='card-panel grey lighten-3 text-center mb-3'>
-        <h4 class="text-center mt-5">Искаш да се присъединиш?</h4>
-        <p>Участници: @Model.Partisipants.Count()</p>
-        <a class="btn btn-info mt-3" href="/Projects/Join?id=@Model.Id">Присъедини се!</a>
+        @if (Model.Partisipant == true)
+        {
+            <h6 class="text-center mt-5">😃 Ти вече участваш в проекта 😃</h6>
+        }
+        else
+        {
+            <h4 class="text-center mt-5">Искаш да се присъединиш?</h4>
+            <p>Участници: @Model.PartisipiantCoint</p>
+            <a class="btn btn-info mt-3" href="/Projects/Join?id=@Model.id">Присъедини се!</a>
+        }
     </div>
 </div>

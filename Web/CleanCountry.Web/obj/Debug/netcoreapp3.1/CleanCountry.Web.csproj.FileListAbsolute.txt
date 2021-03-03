@@ -426,7 +426,6 @@ C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\net
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\_ViewStart.cshtml.g.cs
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Settings\Index.cshtml.g.cs
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs

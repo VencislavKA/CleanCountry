@@ -43,12 +43,12 @@ namespace CleanCountry.Web.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [StringLength(30, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 5)]
+            [Required(ErrorMessage = "Потребителското име е задължително")]
+            [StringLength(30, ErrorMessage = "Потребителското име трябва да е между 5 и 30 бъкви", MinimumLength = 5)]
             [Display(Name = "Потребителско име")]
             public string UserName { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Паролата е задължителна")]
             [DataType(DataType.Password)]
             [Display(Name = "Парола")]
             public string Password { get; set; }
@@ -99,7 +99,7 @@ namespace CleanCountry.Web.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Грешно потребителско име или парола");
                     return Page();
                 }
             }

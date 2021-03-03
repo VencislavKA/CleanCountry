@@ -46,25 +46,25 @@ namespace CleanCountry.Web.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "Имейлът е задължителен")]
+            [EmailAddress(ErrorMessage = "Имейлът не е валиден")]
             [Display(Name = "Имейл")]
             public string Email { get; set; }
 
-            [Required]
-            [StringLength(30, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 5)]
+            [Required(ErrorMessage = "Потребителското име е задължително")]
+            [StringLength(30, ErrorMessage = "Потребителското име трябва да е между 5 и 30 символа", MinimumLength = 5)]
             [Display(Name = "Потребителско име")]
             public string UserName { get; set; }
 
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Required(ErrorMessage = "Паролата е задължителна")]
+            [StringLength(100, ErrorMessage = "Паролата трябва да е между 6 и 100 символа", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Парола")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
             [Display(Name = "Потвърди парола")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "Двете пароли не съвпадат.")]
             public string ConfirmPassword { get; set; }
         }
 

@@ -188,6 +188,7 @@ namespace CleanCountry.Data.Migrations
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
+                    Role = table.Column<int>(nullable: false),
                     SettingsId = table.Column<int>(nullable: true),
                     ProjectId = table.Column<int>(nullable: true)
                 },

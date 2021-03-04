@@ -117,6 +117,9 @@ namespace CleanCountry.Data.Migrations
                     b.Property<int?>("ProjectId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -444,7 +447,7 @@ namespace CleanCountry.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("CleanCountry.Data.Models.ApplicationUser", null)
-                        .WithMany("Roles")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();

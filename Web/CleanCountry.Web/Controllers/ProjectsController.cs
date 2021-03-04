@@ -35,12 +35,13 @@
             this.Environment = environment;
             this.UserManager = userManager;
         }
-
-        [AllowAnonymous]
-        public IActionResult Index()
+        
+        public async Task<IActionResult> Index()
         {
             var projects = this.Service.GetAllProjects();
-            return this.View(projects);
+            var user = await this.UserManager.GetUserAsync(this.User);
+            var result = new ProjectsIndexViewModel() { Projects = projects, Role = user.Role };
+            return this.View(result);
         }
 
         public async Task<IActionResult> Join(int id)
@@ -91,12 +92,19 @@
                 Partisipant = AmIParticipiant,
                 PartisipiantCoint = project.Partisipants.Count(),
                 CreatedOn = project.CreatedOn.ToString(),
+                
             };
             return this.View(result);
         }
 
-        public IActionResult AddProject()
+        public async Task<IActionResult> AddProject()
         {
+            var user = await this.UserManager.GetUserAsync(this.User);
+            if (user.Role == Role.Partisipient)
+            {
+                return this.RedirectToAction("Index", "Projects");
+            }
+
             return this.View();
         }
 
@@ -105,6 +113,12 @@
         [Authorize]
         public async Task<IActionResult> AddProject(AddProjectsInputViewModel model)
         {
+            var user = await this.UserManager.GetUserAsync(this.User);
+            if (user.Role == Role.Partisipient)
+            {
+                return this.RedirectToAction("Index", "Projects");
+            }
+
             string imgPath = this.StoreFileAsync(model.Image).Result;
             if (imgPath == null)
             {

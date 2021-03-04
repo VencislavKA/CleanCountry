@@ -54,10 +54,23 @@
             return "Ready";
         }
 
+        public ICollection<Project> GetProjectsImIn(string id)
+        {
+            var user = this.UserRepository.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
+            if (user == null)
+            {
+                return null;
+            }
+
+            return this.Repository.AllAsNoTracking().Include(x => x.Partisipants).Where(x => x.Partisipants.Contains(user)).ToList();
+        }
+
         public ICollection<Project> GetAllProjects() => this.Repository.AllAsNoTracking().Select(x => x).ToList();
 
         public async Task<Project> GetProject(int id) => await this.Repository.All().Select(x => x).Include(x => x.Partisipants).FirstOrDefaultAsync(x => x.Id == id);
 
         public ICollection<Project> GetMyProjects(string id) => this.Repository.AllAsNoTracking().Where(x => x.Creator.Id == id).Include(x => x.Creator).ToList();
+
+       
     }
 }

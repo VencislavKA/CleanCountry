@@ -1,11 +1,14 @@
-﻿@model List<Project>
+﻿@model ProjectsIndexViewModel
 @{
     ViewData["Title"] = "Projects";
 }
-<a class="btn btn-info float-right" asp-controller="Projects" asp-action="AddProject">Добави проект</a>
+@if (Model.Role != Role.Partisipient)
+{
+    <a class="btn btn-info float-right" asp-controller="Projects" asp-action="AddProject">Добави проект</a>
+}
 <h2>Проекти</h2>
 <hr />
-@if (Model.Count() == 0)
+@if (Model.Projects.Count() == 0)
 {
     <div class="card projectAnimated mt-4">
         <div class="card-body text-center">
@@ -17,7 +20,7 @@
 else
 {
     <div class="card-columns">
-        @foreach (var project in Model)
+        @foreach (var project in Model.Projects)
         {
             <div class="card projectAnimated">
                 <img class="card-img-top" src="@project.Images" alt="Card image cap">

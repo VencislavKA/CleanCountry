@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using CleanCountry.Data.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Extensions.Logging;
-
-namespace CleanCountry.Web.Areas.Identity.Pages.Account
+﻿namespace CleanCountry.Web.Areas.Identity.Pages.Account
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Text;
+    using System.Text.Encodings.Web;
+    using System.Threading.Tasks;
+
+    using CleanCountry.Data.Models;
+    using Microsoft.AspNetCore.Authentication;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Identity.UI.Services;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+    using Microsoft.AspNetCore.WebUtilities;
+    using Microsoft.Extensions.Logging;
+
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
@@ -58,7 +58,7 @@ namespace CleanCountry.Web.Areas.Identity.Pages.Account
 
             [Required(ErrorMessage = "Моля изберете роля")]
             [Display(Name = "Роля")]
-            public string Role { get; set; }
+            public int Role { get; set; }
 
             [Required(ErrorMessage = "Паролата е задължителна")]
             [StringLength(100, ErrorMessage = "Паролата трябва да е между 6 и 100 символа", MinimumLength = 6)]
@@ -85,24 +85,25 @@ namespace CleanCountry.Web.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 Role role;
-                if (this.Input.Role == "1")
+                if (this.Input.Role == 0)
                 {
                     role = Role.Partisipient;
                 }
-                else if (this.Input.Role == "2")
+                else if (this.Input.Role == 1)
                 {
                     role = Role.Organizator;
                 }
-                else if (this.Input.Role == "3")
+                else if (this.Input.Role == 2)
                 {
                     role = Role.Admin;
                 }
                 else
                 {
-                    //gre6na rolq
+                    return Page();
                 }
-                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email,  };
-                var result = await _userManager.CreateAsync(user, Input.Password);
+
+                var user = new ApplicationUser { UserName = this.Input.UserName, Email = this.Input.Email, Role = role };
+                var result = await _userManager.CreateAsync(user, this.Input.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

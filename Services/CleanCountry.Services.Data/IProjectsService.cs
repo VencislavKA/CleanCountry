@@ -13,6 +13,8 @@
 
         public Task<string> JoinProject(int projectId, string userName);
 
+        public ICollection<Project> GetProjectsImIn(string id);
+
         public ICollection<Project> GetAllProjects();
 
         public Task<Project> GetProject(int id);

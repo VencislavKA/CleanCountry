@@ -25,7 +25,18 @@
             </div>
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h5 class="mb-0">Мои проекти/Участия</h5>
+                    @if (Model.Role == "Учасник")
+                    {
+                        <h5 class="mb-0">Участия</h5>
+                    }
+                    else if (Model.Role == "Организатор")
+                    {
+                        <h5 class="mb-0">Мои проекти</h5>
+                    }
+                    else
+                    {
+                        <h5 class="mb-0">Мои проекти/Участия</h5>
+                    }
                 </div>
                 <div class="row">
                     <div class="card-deck ">

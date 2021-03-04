@@ -30,7 +30,22 @@
         {
             var user = await this.UserManager.GetUserAsync(this.User);
             var projects = this.ProjectsService.GetMyProjects(user.Id).ToList();
-            var result = new ProfileViewModel() { UserName = user.UserName, Projects = projects, Email = user.Email };
+            string role = "";
+            if (user.Role == Role.Partisipient)
+            {
+                role = "Уастник";
+                projects = this.ProjectsService.GetProjectsImIn(user.Id).ToList();
+            }
+            else if (user.Role == Role.Organizator)
+            {
+                role = "Организатор";
+            }
+            else if (user.Role == Role.Admin)
+            {
+                role = "Админ";
+            }
+
+            var result = new ProfileViewModel() { UserName = user.UserName, Projects = projects, Email = user.Email, Role = role };
             return this.View(result);
         }
     }

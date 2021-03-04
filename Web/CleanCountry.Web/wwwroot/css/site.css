@@ -523,3 +523,32 @@ aside li h3 {
         margin-top: 5px;
         display: inline-block;
     }
+    .card-hover {
+        transition: 2s;
+    }
+
+    card-hover:hover{
+    }
+
+    .card-hover .card-image-hover{
+        display: none;
+    }
+
+    .card-hover:hover .card-image-hover {
+        display: block;
+    }
+
+    .image-cardAnimated {
+        animation-name: scaleAnimation;
+        animation-duration: 1s;
+    }
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

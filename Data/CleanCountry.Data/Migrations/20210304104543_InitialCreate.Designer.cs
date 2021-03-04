@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanCountry.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210303204210_initialcreate")]
-    partial class initialcreate
+    [Migration("20210304104543_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

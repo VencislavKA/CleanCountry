@@ -34,6 +34,13 @@ using CleanCountry.Web.ViewModels.Projects;
 #line hidden
 #nullable disable
 #nullable restore
+#line 5 "C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\Views\_ViewImports.cshtml"
+using CleanCountry.Web.ViewModels.Profile;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\Views\Shared\_LoginPartial.cshtml"
 using CleanCountry.Common;
 
@@ -55,7 +62,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d772567a4eceedb9c456d51d04d4bbebbc1e6f6c", @"/Views/Shared/_LoginPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"259f4ce6368bca56ca1255239e4666ccd0f89331", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dab43bf089c7935ffca31874d2d8f5353595a3e3", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__LoginPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link text-dark"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -106,7 +113,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("        <li class=\"nav-item\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c8451", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c8668", async() => {
                 WriteLiteral("Здравей ");
 #nullable restore
 #line 11 "C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\Views\Shared\_LoginPartial.cshtml"
@@ -144,7 +151,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("            <li class=\"nav-item\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c10819", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c11036", async() => {
                 WriteLiteral("Admin");
             }
             );
@@ -174,7 +181,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("        <li class=\"nav-item\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c12838", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c13055", async() => {
                 WriteLiteral("\r\n                <button type=\"submit\" class=\"nav-link btn btn-link text-dark\">Изход</button>\r\n            ");
             }
             );
@@ -222,7 +229,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("            <li class=\"nav-item navAnimated\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c16187", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c16404", async() => {
                 WriteLiteral("Вход");
             }
             );
@@ -241,7 +248,7 @@ using Microsoft.AspNetCore.Identity;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c17700", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c17917", async() => {
                 WriteLiteral("Регистрация");
             }
             );
@@ -270,7 +277,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("            <li class=\"nav-item\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c19511", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c19728", async() => {
                 WriteLiteral("Вход");
             }
             );
@@ -289,7 +296,7 @@ using Microsoft.AspNetCore.Identity;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            </li>\r\n            <li class=\"nav-item navAnimated\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c21036", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c21253", async() => {
                 WriteLiteral("Регистрация");
             }
             );
@@ -318,7 +325,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("            <li class=\"nav-item\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c22805", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c23022", async() => {
                 WriteLiteral("Вход");
             }
             );
@@ -337,7 +344,7 @@ using Microsoft.AspNetCore.Identity;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c24318", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d772567a4eceedb9c456d51d04d4bbebbc1e6f6c24535", async() => {
                 WriteLiteral("Регистрация");
             }
             );

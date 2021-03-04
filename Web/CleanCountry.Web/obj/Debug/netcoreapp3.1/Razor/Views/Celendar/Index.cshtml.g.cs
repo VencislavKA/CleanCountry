@@ -40,8 +40,15 @@ using CleanCountry.Data.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\Views\_ViewImports.cshtml"
+using CleanCountry.Web.ViewModels.Profile;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f9a6d891ca3efcc056750d78fa15535265fbc35f", @"/Views/Celendar/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"259f4ce6368bca56ca1255239e4666ccd0f89331", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dab43bf089c7935ffca31874d2d8f5353595a3e3", @"/Views/_ViewImports.cshtml")]
     public class Views_Celendar_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Project>>
     {
         #pragma warning disable 1998

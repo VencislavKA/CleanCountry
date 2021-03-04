@@ -111,10 +111,14 @@
                 return this.View();
             }
 
-            DateTime Date;
-            DateTime.TryParseExact(model.Date, "yyyy-dd-MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out Date);
+            DateTime date;
+            DateTime.TryParseExact(model.Date, "yyyy-dd-MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
+            if (date == null)
+            {
+                return this.View();
+            }
 
-            string result = await this.Service.AddProject(model.Title, model.Description, imgPath, this.User.Identity.Name);
+            string result = await this.Service.AddProject(model.Title, model.Description, imgPath, this.User.Identity.Name, date);
             if (result != null)
             {
                 return this.RedirectToAction("Index");

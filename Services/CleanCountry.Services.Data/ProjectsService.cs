@@ -1,5 +1,6 @@
 ﻿namespace CleanCountry.Services.Data
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -21,12 +22,12 @@
 
         public IRepository<ApplicationUser> UserRepository { get; }
 
-        public async Task<string> AddProject(string title, string description, string imgPath, string creatorName)
+        public async Task<string> AddProject(string title, string description, string imgPath, string creatorName, DateTime date)
         {
             var creator = this.UserRepository.All().FirstOrDefault(x => x.UserName == creatorName);
             if (title != null && description != null && imgPath != null)
             {
-                await this.Repository.AddAsync(new Project { Title = title, Description = description, Images = imgPath, Creator = creator });
+                await this.Repository.AddAsync(new Project { Title = title, Description = description, Images = imgPath, Creator = creator, Date = date });
                 await this.Repository.SaveChangesAsync();
                 return string.Empty;
             }

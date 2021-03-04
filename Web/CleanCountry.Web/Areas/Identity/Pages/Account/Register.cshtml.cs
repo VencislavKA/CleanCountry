@@ -56,6 +56,10 @@ namespace CleanCountry.Web.Areas.Identity.Pages.Account
             [Display(Name = "Потребителско име")]
             public string UserName { get; set; }
 
+            [Required(ErrorMessage = "Моля изберете роля")]
+            [Display(Name = "Роля")]
+            public string Role { get; set; }
+
             [Required(ErrorMessage = "Паролата е задължителна")]
             [StringLength(100, ErrorMessage = "Паролата трябва да е между 6 и 100 символа", MinimumLength = 6)]
             [DataType(DataType.Password)]
@@ -80,7 +84,24 @@ namespace CleanCountry.Web.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email };
+                Role role;
+                if (this.Input.Role == "1")
+                {
+                    role = Role.Partisipient;
+                }
+                else if (this.Input.Role == "2")
+                {
+                    role = Role.Organizator;
+                }
+                else if (this.Input.Role == "3")
+                {
+                    role = Role.Admin;
+                }
+                else
+                {
+                    //gre6na rolq
+                }
+                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email,  };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

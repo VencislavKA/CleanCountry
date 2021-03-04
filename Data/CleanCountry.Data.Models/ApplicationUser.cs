@@ -13,7 +13,6 @@ namespace CleanCountry.Data.Models
         public ApplicationUser()
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Roles = new HashSet<IdentityUserRole<string>>();
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
         }
@@ -28,7 +27,7 @@ namespace CleanCountry.Data.Models
 
         public DateTime? DeletedOn { get; set; }
 
-        public virtual ICollection<IdentityUserRole<string>> Roles { get; set; }
+        public Role Role { get; set; }
 
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 

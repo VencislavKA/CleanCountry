@@ -943,3 +943,4 @@ C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\bin\Debug\net
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Web\CleanCountry.Web\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Projects\Project.cshtml.g.cs
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\AdminPage.cshtml.g.cs

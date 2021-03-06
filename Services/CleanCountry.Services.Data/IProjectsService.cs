@@ -9,17 +9,17 @@
 
     public interface IProjectsService
     {
-        public Task<string> AddProject(string title, string description, string imgPath, string creatorName, DateTime date);
+        public Task<string> AddProjectAsync(string title, string description, string imgPath, string creatorName, DateTime date);
 
-        public Task<string> JoinProject(int projectId, string userName);
+        public Task<string> JoinProjectAsync(int projectId, string userName);
 
-        public Task<string> ExitProject(int projectId, string userName);
+        public Task<string> ExitProjectAsync(int projectId, string userName);
 
         public ICollection<Project> GetProjectsImIn(string id);
 
         public ICollection<Project> GetAllProjects();
 
-        public Task<Project> GetProject(int id);
+        public Task<Project> GetProjectAsync(int id);
 
         public ICollection<Project> GetMyProjects(string id);
     }

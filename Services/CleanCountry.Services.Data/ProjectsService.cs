@@ -22,7 +22,7 @@
 
         public IRepository<ApplicationUser> UserRepository { get; }
 
-        public async Task<string> AddProject(string title, string description, string imgPath, string creatorName, DateTime date)
+        public async Task<string> AddProjectAsync(string title, string description, string imgPath, string creatorName, DateTime date)
         {
             var creator = this.UserRepository.All().FirstOrDefault(x => x.UserName == creatorName);
             if (title != null && description != null && imgPath != null)
@@ -35,7 +35,7 @@
             return null;
         }
 
-        public async Task<string> JoinProject(int projectId, string userName)
+        public async Task<string> JoinProjectAsync(int projectId, string userName)
         {
             var user = await this.UserRepository.All().FirstOrDefaultAsync(x => x.UserName == userName);
             if (user == null)
@@ -54,7 +54,7 @@
             return "Ready";
         }
 
-        public async Task<string> ExitProject(int projectId, string userName)
+        public async Task<string> ExitProjectAsync(int projectId, string userName)
         {
             var user = await this.UserRepository.All().FirstOrDefaultAsync(x => x.UserName == userName);
             if (user == null)
@@ -67,7 +67,7 @@
             {
                 return null;
             }
-           
+
             project.Partisipants.Remove(project.Partisipants.Single(x => x.Id == user.Id));
             await this.Repository.SaveChangesAsync();
             return "Ready";
@@ -86,10 +86,8 @@
 
         public ICollection<Project> GetAllProjects() => this.Repository.AllAsNoTracking().Select(x => x).ToList();
 
-        public async Task<Project> GetProject(int id) => await this.Repository.All().Select(x => x).Include(x => x.Partisipants).FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Project> GetProjectAsync(int id) => await this.Repository.All().Select(x => x).Include(x => x.Partisipants).FirstOrDefaultAsync(x => x.Id == id);
 
         public ICollection<Project> GetMyProjects(string id) => this.Repository.AllAsNoTracking().Where(x => x.Creator.Id == id).Include(x => x.Creator).ToList();
-
-       
     }
 }

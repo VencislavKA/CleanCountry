@@ -85,21 +85,21 @@
             if (ModelState.IsValid)
             {
                 Role role;
-                if (this.Input.Role == 0)
+                if (this.Input.Role == 1)
                 {
                     role = Role.Partisipient;
                 }
-                else if (this.Input.Role == 1)
+                else if (this.Input.Role == 2)
                 {
                     role = Role.Organizator;
                 }
-                else if (this.Input.Role == 2)
+                else if (this.Input.Role == 3)
                 {
                     role = Role.Admin;
                 }
                 else
                 {
-                    return Page();
+                    return this.Page();
                 }
 
                 var user = new ApplicationUser { UserName = this.Input.UserName, Email = this.Input.Email, Role = role };

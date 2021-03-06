@@ -1,9 +1,8 @@
 ﻿namespace CleanCountry.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+
     using CleanCountry.Data.Common.Repositories;
     using CleanCountry.Data.Models;
     using CleanCountry.Services.Data;
@@ -30,7 +29,7 @@
         {
             var user = await this.UserManager.GetUserAsync(this.User);
             var projects = this.ProjectsService.GetMyProjects(user.Id).ToList();
-            string role = "";
+            string role = string.Empty;
             if (user.Role == Role.Partisipient)
             {
                 role = "Уастник";

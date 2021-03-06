@@ -1,27 +1,23 @@
 ﻿namespace CleanCountry.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
 
     using CleanCountry.Data.Models;
     using CleanCountry.Services.Data;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
-
     public class CelendarController : BaseController
     {
-        public IProjectsService Service { get; }
-
-        public UserManager<ApplicationUser> UserManager { get; }
-
         public CelendarController(IProjectsService service, UserManager<ApplicationUser> userManager)
         {
             this.Service = service;
             this.UserManager = userManager;
         }
+
+        public IProjectsService Service { get; }
+
+        public UserManager<ApplicationUser> UserManager { get; }
 
         public IActionResult Index()
         {

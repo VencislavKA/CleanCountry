@@ -46,14 +46,14 @@
 
         public async Task<IActionResult> Join(int id)
         {
-            Project project = await this.Service.GetProject(id);
+            Project project = await this.Service.GetProjectAsync(id);
             if (project == null)
             {
                 // има грешка в id-то и препращаме към страницата с проектите
                 this.RedirectToAction("Index");
             }
 
-            var result = await this.Service.JoinProject(id, this.User.Identity.Name);
+            var result = await this.Service.JoinProjectAsync(id, this.User.Identity.Name);
             if (result == null)
             {
                 this.RedirectToAction("Index");
@@ -70,17 +70,17 @@
 
         public async Task<IActionResult> Project(int id)
         {
-            Project project = await this.Service.GetProject(id);
+            Project project = await this.Service.GetProjectAsync(id);
             if (string.IsNullOrEmpty(project.Title))
             {
                 // има грешка в id-то и препращаме към страницата с проектите
                 this.RedirectToAction("Index");
             }
 
-            bool AmIParticipiant = false;
+            bool amIParticipiant = false;
             if (project.Partisipants.Contains(this.UserManager.GetUserAsync(this.User).Result))
             {
-                AmIParticipiant = true;
+                amIParticipiant = true;
             }
 
             var result = new ProjectViewModel()
@@ -89,7 +89,7 @@
                 Title = project.Title,
                 Description = project.Description,
                 Images = project.Images,
-                Partisipant = AmIParticipiant,
+                Partisipant = amIParticipiant,
                 PartisipiantCoint = project.Partisipants.Count(),
                 CreatedOn = project.CreatedOn.ToString(),
             };
@@ -99,13 +99,13 @@
         [HttpPost]
         public async Task<IActionResult> ExitProject(int id)
         {
-            Project project = await this.Service.GetProject(id);
+            Project project = await this.Service.GetProjectAsync(id);
             if (project == null)
             {
                 this.RedirectToAction("Index");
             }
 
-            var result = await this.Service.ExitProject(id, this.User.Identity.Name);
+            var result = await this.Service.ExitProjectAsync(id, this.User.Identity.Name);
             if (result == null)
             {
                 this.RedirectToAction("Index");
@@ -149,7 +149,7 @@
                 return this.View();
             }
 
-            string result = await this.Service.AddProject(model.Title, model.Description, imgPath, this.User.Identity.Name, date);
+            string result = await this.Service.AddProjectAsync(model.Title, model.Description, imgPath, this.User.Identity.Name, date);
             if (result != null)
             {
                 return this.RedirectToAction("Index");

@@ -54,6 +54,25 @@
             return "Ready";
         }
 
+        public async Task<string> ExitProject(int projectId, string userName)
+        {
+            var user = await this.UserRepository.All().FirstOrDefaultAsync(x => x.UserName == userName);
+            if (user == null)
+            {
+                return null;
+            }
+
+            var project = await this.Repository.All().Include(x => x.Partisipants).FirstOrDefaultAsync(x => x.Id == projectId);
+            if (project == null)
+            {
+                return null;
+            }
+           
+            project.Partisipants.Remove(project.Partisipants.Single(x => x.Id == user.Id));
+            await this.Repository.SaveChangesAsync();
+            return "Ready";
+        }
+
         public ICollection<Project> GetProjectsImIn(string id)
         {
             var user = this.UserRepository.AllAsNoTracking().FirstOrDefault(x => x.Id == id);

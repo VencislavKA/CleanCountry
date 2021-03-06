@@ -92,9 +92,26 @@
                 Partisipant = AmIParticipiant,
                 PartisipiantCoint = project.Partisipants.Count(),
                 CreatedOn = project.CreatedOn.ToString(),
-                
             };
             return this.View(result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ExitProject(int id)
+        {
+            Project project = await this.Service.GetProject(id);
+            if (project == null)
+            {
+                this.RedirectToAction("Index");
+            }
+
+            var result = await this.Service.ExitProject(id, this.User.Identity.Name);
+            if (result == null)
+            {
+                this.RedirectToAction("Index");
+            }
+
+            return this.Redirect("/Projects/Project?id=" + id.ToString());
         }
 
         public async Task<IActionResult> AddProject()

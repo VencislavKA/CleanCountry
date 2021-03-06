@@ -32,10 +32,10 @@
                     <span class="weekend date">@i</span>
                     @foreach (var project in @Model)
                     {
-                        //@if (project.Date == new DateTime(DateTime.Today.Year, DateTime.Today.Month, i))
-                       // {
-                        //    <a href="/Projects/Project/@project.Id">project.Title</a>
-                       // }
+                        @if (project.Date == new DateTime(DateTime.Today.Year, DateTime.Today.Month, i))
+                        {
+                            <a href="/Projects/Project/@project.Id">project.Title</a>
+                        }
                     }
                 </td>
             }
@@ -45,10 +45,10 @@
                     <span class="date">@i</span>
                     @foreach (var project in @Model)
                     {
-                        //@if (project.Date == new DateTime(DateTime.Today.Year, DateTime.Today.Month, i))
-                        // {
-                        //    <a href="/Projects/Project/@project.Id">project.Title</a>
-                        // }
+                        @if (project.Date == new DateTime(DateTime.Today.Year, DateTime.Today.Month, i))
+                        {
+                            <a href="/Projects/Project/@project.Id">project.Title</a>
+                        }
                     }
                 </td>
             }

@@ -68,6 +68,11 @@
                 return null;
             }
 
+            if (!project.Partisipants.Contains(user))
+            {
+                return null;
+            }
+
             project.Partisipants.Remove(project.Partisipants.Single(x => x.Id == user.Id));
             await this.Repository.SaveChangesAsync();
             return "Ready";

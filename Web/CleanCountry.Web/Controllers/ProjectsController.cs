@@ -35,7 +35,7 @@
             this.Environment = environment;
             this.UserManager = userManager;
         }
-        
+
         public async Task<IActionResult> Index()
         {
             var projects = this.Service.GetAllProjects();

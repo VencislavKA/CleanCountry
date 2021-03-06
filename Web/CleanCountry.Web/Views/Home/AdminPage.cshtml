@@ -1,7 +1,51 @@
-﻿
+﻿@model AdminViewModel
 @{
     ViewData["Title"] = "AdminPage";
 }
 
 <h1>AdminPage</h1>
 
+@if (Model.Projects.Count() == 0)
+{
+    <div class="card projectAnimated mt-4">
+        <div class="card-body text-center">
+            <h5 class="card-title">🙃 До момента няма добавени проекти 🙃</h5>
+            <p>🥇 Ти можеш да си първи 🥇</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card-columns">
+        @foreach (var project in Model.Projects)
+        {
+            <div class="card projectAnimated">
+                <img class="card-img-top" src="@project.Images" alt="Card image cap">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@project.Title</h5>
+                    <p class="card-text">@project.Description</p>
+                    <a href="/Projects/Project?id=" class="btn btn-primary w-100">Изтрии проекта</a>
+                </div>
+            </div>
+        }
+    </div>
+}
+@if (Model.Users.Count() == 0)
+{
+    <p>Няма потребители</p>
+}
+else
+{
+    <div class="card-columns">
+        @foreach (var user in Model.Users)
+        {
+            <div class="card projectAnimated">
+                <img class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@user.UserName</h5>
+                    <a href="/Projects/Project?id=" class="btn btn-primary w-100">Изтрии потребителя</a>
+                </div>
+            </div>
+        }
+    </div>
+}

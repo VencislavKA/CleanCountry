@@ -41,27 +41,27 @@
                     }
                 </div>
                 <div class="row">
-                    <div class="card-deck ">
+                    <div class="card-columns">
                         @foreach (var project in Model.Projects)
                         {
-
-                            <div class="card card-hover">
-                                <img class="card-img-top card-image-hover image-cardAnimated" src="@project.Images" alt="Card image cap">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">@project.Title</h5>
-                                    <p class="card-text">@project.Description</p>
-                                </div>
-                                <div class="card-footer text-muted">Създадена на: @project.CreatedOn</div>
-                                <a href="/Projects/ExitProject/@project.Id" class="btn btn-primary w-25" style="margin-top: 2%; margin-bottom: 3%;">Откажи участие</a>
+                        <div class="card">
+                            <img class="card-img-top image-cardAnimated" src="@project.Images" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@project.Title</h5>
+                                <p class="card-text">@project.Description</p>
+                                <a href="/Projects/ExitProject/@project.Id" class="btn btn-primary w-100">Откажи проект</a>
                             </div>
-
+                            <div class="card-footer text-muted">Създадена на: @project.CreatedOn</div>
+                        </div>
                         }
                     </div>
                 </div>
 
                 @if (Model.Role == "Админ")
                 {
-                    <a asp-controller="Home" asp-action="AdminPage">Стараница за админи</a>
+                    <div class="text-center">
+                        <a asp-controller="Home" asp-action="AdminPage">Стараница за админи</a>
+                    </div>
                 }
             </div>
         </div>

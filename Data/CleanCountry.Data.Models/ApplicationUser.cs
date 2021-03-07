@@ -17,6 +17,8 @@ namespace CleanCountry.Data.Models
             this.Logins = new HashSet<IdentityUserLogin<string>>();
         }
 
+        public string ProfilePicture { get; set; }
+
         // Audit info
         public DateTime CreatedOn { get; set; }
 

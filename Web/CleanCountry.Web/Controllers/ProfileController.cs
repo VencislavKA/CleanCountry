@@ -52,7 +52,7 @@
                 role = "Админ";
             }
 
-            var result = new ProfileViewModel() { UserName = user.UserName, Projects = projects, Email = user.Email, Role = role };
+            var result = new ProfileViewModel() { UserName = user.UserName, Projects = projects, Email = user.Email, Role = role, Photo = user.ProfilePicture };
             return this.View(result);
         }
 

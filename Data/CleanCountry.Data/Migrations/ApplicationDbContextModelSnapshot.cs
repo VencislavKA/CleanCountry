@@ -114,6 +114,9 @@ namespace CleanCountry.Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("ProjectId")
                         .HasColumnType("int");
 

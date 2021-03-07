@@ -24,7 +24,7 @@ else
                 <div class="card-body text-center">
                     <h5 class="card-title">@project.Title</h5>
                     <p class="card-text">@project.Description</p>
-                    <a href="/Projects/Project?id=" class="btn btn-primary w-100">Изтрии проекта</a>
+                    <a href="/Projects/DeleteProject?id=@project.Id&&userName=@this.User.Identity.Name&&backLink=@this.Url" class="btn btn-primary w-100">Изтии проект</a>
                 </div>
             </div>
         }
@@ -43,7 +43,7 @@ else
                 <img class="card-img-top" src="" alt="Card image cap">
                 <div class="card-body text-center">
                     <h5 class="card-title">@user.UserName</h5>
-                    <a href="/Projects/Project?id=" class="btn btn-primary w-100">Изтрии потребителя</a>
+                    <a href="/Home/DeleteProfile?userName=@user.UserName" class="btn btn-primary w-100">Изтрии потребителя</a>
                 </div>
             </div>
         }

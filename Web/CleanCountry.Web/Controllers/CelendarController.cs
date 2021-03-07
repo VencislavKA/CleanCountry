@@ -21,7 +21,7 @@
 
         public IActionResult Index()
         {
-            var projects = this.Service.GetAllProjects().Where(x => x.Partisipants.Contains(this.UserManager.GetUserAsync(this.User).Result)).ToList();
+            var projects = this.Service.GetAllProjects().Where(x => x.Partisipants.Contains(this.UserManager.GetUserAsync(this.User).Result) && x.Creator == this.UserManager.GetUserAsync(this.User).Result).ToList();
             return this.View(projects);
         }
     }

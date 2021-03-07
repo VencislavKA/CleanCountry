@@ -2,25 +2,33 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Data;
     using System.Linq;
     using System.Threading.Tasks;
 
     using CleanCountry.Data.Common.Repositories;
     using CleanCountry.Data.Models;
     using CleanCountry.Web.ViewModels.Projects;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
 
     public class ProjectsService : IProjectsService
     {
-        public ProjectsService(IRepository<Project> repository, IRepository<ApplicationUser> userRepository)
+        public ProjectsService(
+            IRepository<Project> repository,
+            IRepository<ApplicationUser> userRepository,
+            UserManager<ApplicationUser> userManager)
         {
             this.Repository = repository;
             this.UserRepository = userRepository;
+            this.UserManager = userManager;
         }
 
         public IRepository<Project> Repository { get; }
 
         public IRepository<ApplicationUser> UserRepository { get; }
+
+        public UserManager<ApplicationUser> UserManager { get; }
 
         public async Task<string> AddProjectAsync(string title, string description, string imgPath, string creatorName, DateTime date)
         {
@@ -94,5 +102,23 @@
         public async Task<Project> GetProjectAsync(int id) => await this.Repository.All().Select(x => x).Include(x => x.Partisipants).FirstOrDefaultAsync(x => x.Id == id);
 
         public ICollection<Project> GetMyProjects(string id) => this.Repository.AllAsNoTracking().Where(x => x.Creator.Id == id).Include(x => x.Creator).ToList();
+
+        public async Task<string> DeleteProjectAsync(int projectId, string userName)
+        {
+            var user = await this.UserManager.FindByNameAsync(userName);
+            var project = await this.Repository.All().FirstOrDefaultAsync(x => x.Id == projectId);
+            if (user == null)
+            {
+                return null;
+            }
+            else if (user.Role == Role.Admin || project.Creator == user)
+            {
+                this.Repository.Delete(project);
+                await this.Repository.SaveChangesAsync();
+                return "Ready";
+            }
+
+            return null;
+        }
     }
 }

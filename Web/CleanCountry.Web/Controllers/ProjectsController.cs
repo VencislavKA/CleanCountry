@@ -6,8 +6,9 @@
     using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Runtime.InteropServices.WindowsRuntime;
     using System.Threading.Tasks;
-
+    using AutoMapper.Configuration.Conventions;
     using CleanCountry.Data.Models;
     using CleanCountry.Services.Data;
     using CleanCountry.Web.ViewModels.Projects;
@@ -17,17 +18,12 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Data.SqlClient.DataClassification;
+    
+    using Microsoft.AspNetCore.Hosting;
 
     [Authorize]
     public class ProjectsController : BaseController
     {
-        public IProjectsService Service { get; }
-
-        [Obsolete]
-        public IHostingEnvironment Environment { get; }
-
-        public UserManager<ApplicationUser> UserManager { get; }
-
         [Obsolete]
         public ProjectsController(IProjectsService service, IHostingEnvironment environment, UserManager<ApplicationUser> userManager)
         {
@@ -35,6 +31,13 @@
             this.Environment = environment;
             this.UserManager = userManager;
         }
+
+        public IProjectsService Service { get; }
+
+        [Obsolete]
+        public IHostingEnvironment Environment { get; }
+
+        public UserManager<ApplicationUser> UserManager { get; }
 
         public async Task<IActionResult> Index()
         {
@@ -156,6 +159,34 @@
             }
 
             return this.View();
+        }
+
+        public async Task<IActionResult> DeleteProject(int id, string userName, string backLink)
+        {
+            var user = await this.UserManager.FindByNameAsync(userName);
+            if (user == null)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            var project = await this.Service.GetProjectAsync(id);
+            if (project == null)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            if (user.Role == Role.Admin || this.Service.GetMyProjects(user.Id).Contains(project))
+            {
+                var result = await this.Service.DeleteProjectAsync(project.Id, this.User.Identity.Name);
+                if (result == null)
+                {
+                    return this.RedirectToAction("Index");
+                }
+
+                return this.Redirect(string.Empty + backLink);
+            }
+
+            return null;
         }
 
         [Obsolete]

@@ -15,6 +15,8 @@
 
         public Task<string> ExitProjectAsync(int projectId, string userName);
 
+        public Task<string> DeleteProjectAsync(int projectId, string userName);
+
         public ICollection<Project> GetProjectsImIn(string id);
 
         public ICollection<Project> GetAllProjects();

@@ -9,14 +9,20 @@
     using CleanCountry.Web.ViewModels.Profile;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Data.SqlClient.DataClassification;
 
     public class ProfileController : Controller
     {
-        public ProfileController(UserManager<ApplicationUser> userManager, IProjectsService projectsService, IRepository<ApplicationRole> roleRepository)
+        public ProfileController(
+            UserManager<ApplicationUser> userManager,
+            IProjectsService projectsService,
+            IRepository<ApplicationRole> roleRepository,
+            IUserService userService)
         {
             this.UserManager = userManager;
             this.ProjectsService = projectsService;
             this.RoleRepository = roleRepository;
+            this.UserService = userService;
         }
 
         public UserManager<ApplicationUser> UserManager { get; }
@@ -24,6 +30,8 @@
         public IProjectsService ProjectsService { get; }
 
         public IRepository<ApplicationRole> RoleRepository { get; }
+
+        public IUserService UserService { get; }
 
         public async Task<IActionResult> Index()
         {
@@ -46,6 +54,24 @@
 
             var result = new ProfileViewModel() { UserName = user.UserName, Projects = projects, Email = user.Email, Role = role };
             return this.View(result);
+        }
+
+        public async Task<IActionResult> DeleteProfile(string userName)
+        {
+            var user = await this.UserManager.FindByNameAsync(this.User.Identity.Name);
+            if (user.Role != Role.Admin)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            var forDel = await this.UserManager.FindByNameAsync(userName);
+            var result = await this.UserService.DeleteUserAsync(forDel.Id);
+            if (result == null)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            return this.RedirectToAction("AdminPage", "Home");
         }
     }
 }

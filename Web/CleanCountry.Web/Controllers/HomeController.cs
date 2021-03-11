@@ -2,6 +2,7 @@
 {
     using System.Diagnostics;
     using System.Threading.Tasks;
+
     using CleanCountry.Data.Models;
     using CleanCountry.Services.Data;
     using CleanCountry.Web.ViewModels;
@@ -45,7 +46,7 @@
 
         public async Task<IActionResult> DeleteProfile()
         {
-
+            return this.View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -99,7 +99,6 @@
             return this.View(result);
         }
 
-        [HttpPost]
         public async Task<IActionResult> ExitProject(int id)
         {
             Project project = await this.Service.GetProjectAsync(id);

@@ -42,8 +42,8 @@
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "Имейлът не може да остане празен")]
+            [EmailAddress(ErrorMessage ="Грешен имейл адрес")]
             [Display(Name = "Нов имейл")]
             public string NewEmail { get; set; }
         }
@@ -102,7 +102,7 @@
                     "Confirm your email",
                     $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-                StatusMessage = "Confirmation link to change email sent. Please check your email.";
+                StatusMessage = "Имейлът ви бе сменен";
                 return RedirectToPage();
             }
 

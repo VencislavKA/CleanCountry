@@ -97,9 +97,9 @@
             return this.Repository.AllAsNoTracking().Include(x => x.Partisipants).Where(x => x.Partisipants.Contains(user)).ToList();
         }
 
-        public ICollection<Project> GetAllProjects() => this.Repository.AllAsNoTracking().Select(x => x).ToList();
+        public ICollection<Project> GetAllProjects() => this.Repository.AllAsNoTracking().Include(x => x.Creator).Select(x => x).ToList();
 
-        public async Task<Project> GetProjectAsync(int id) => await this.Repository.All().Select(x => x).Include(x => x.Partisipants).FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Project> GetProjectAsync(int id) => await this.Repository.All().Select(x => x).Include(x => x.Partisipants).Include(x => x.Creator).FirstOrDefaultAsync(x => x.Id == id);
 
         public ICollection<Project> GetMyProjects(string id) => this.Repository.AllAsNoTracking().Where(x => x.Creator.Id == id).Include(x => x.Creator).ToList();
 

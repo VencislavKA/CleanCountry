@@ -53,13 +53,18 @@
             if (project == null)
             {
                 // има грешка в id-то и препращаме към страницата с проектите
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
+            }
+
+            if (project.Creator.UserName == this.User.Identity.Name)
+            {
+                return this.RedirectToAction("Index");
             }
 
             var result = await this.Service.JoinProjectAsync(id, this.User.Identity.Name);
             if (result == null)
             {
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
             return this.Redirect("/Projects/Project?id=" + id.ToString());
@@ -77,7 +82,7 @@
             if (string.IsNullOrEmpty(project.Title))
             {
                 // има грешка в id-то и препращаме към страницата с проектите
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
             bool amIParticipiant = false;
@@ -89,6 +94,7 @@
             var result = new ProjectViewModel()
             {
                 id = project.Id,
+                CreatorName = project.Creator.UserName,
                 Title = project.Title,
                 Description = project.Description,
                 Images = project.Images,
@@ -104,13 +110,18 @@
             Project project = await this.Service.GetProjectAsync(id);
             if (project == null)
             {
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
+            }
+
+            if (project.Creator.UserName == this.User.Identity.Name)
+            {
+                return this.RedirectToAction("Index");
             }
 
             var result = await this.Service.ExitProjectAsync(id, this.User.Identity.Name);
             if (result == null)
             {
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
             return this.Redirect("/Projects/Project?id=" + id.ToString());

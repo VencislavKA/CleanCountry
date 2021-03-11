@@ -102,7 +102,7 @@
                     return this.Page();
                 }
 
-                var user = new ApplicationUser { UserName = this.Input.UserName, Email = this.Input.Email, Role = role };
+                var user = new ApplicationUser { UserName = this.Input.UserName, Email = this.Input.Email, Role = role, ProfilePicture = "http://ssl.gstatic.com/accounts/ui/avatar_2x.png" };
                 var result = await _userManager.CreateAsync(user, this.Input.Password);
                 if (result.Succeeded)
                 {

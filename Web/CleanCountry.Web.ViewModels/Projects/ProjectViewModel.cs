@@ -4,6 +4,8 @@
     {
         public int id { get; set; }
 
+        public string CreatorName { get; set; }
+
         public string Title { get; set; }
 
         public string Images { get; set; }

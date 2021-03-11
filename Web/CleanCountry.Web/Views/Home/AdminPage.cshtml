@@ -3,16 +3,13 @@
     ViewData["Title"] = "AdminPage";
 }
 
-<h1>AdminPage</h1>
+<h1>Админ страница</h1>
+
+<h5 class="text-center">Проекти</h5>
 
 @if (Model.Projects.Count() == 0)
 {
-    <div class="card projectAnimated mt-4">
-        <div class="card-body text-center">
-            <h5 class="card-title">🙃 До момента няма добавени проекти 🙃</h5>
-            <p>🥇 Ти можеш да си първи 🥇</p>
-        </div>
-    </div>
+   <p class="text-center">Няма обяви</p>
 }
 else
 {
@@ -24,25 +21,34 @@ else
                 <div class="card-body text-center">
                     <h5 class="card-title">@project.Title</h5>
                     <p class="card-text">@project.Description</p>
-                    <a href="/Projects/DeleteProject?id=@project.Id&&userName=@this.User.Identity.Name&&backLink=@this.Url" class="btn btn-primary w-100">Изтии проект</a>
+                    <p class="card-text">Създател: @project.Creator.UserName</p>
+                    <a href="/Projects/DeleteProject?id=@project.Id&&userName=@this.User.Identity.Name&&backLink=/Home/AdminPage" class="btn btn-primary w-100">Изтии проект</a>
                 </div>
             </div>
         }
     </div>
 }
+
+<h5 class="text-center">Потребители</h5>
+
 @if (Model.Users.Count() == 0)
 {
-    <p>Няма потребители</p>
+    <p class="text-center">Няма потребители</p>
 }
 else
 {
     <div class="card-columns">
         @foreach (var user in Model.Users)
         {
+            if (user.UserName == this.User.Identity.Name)
+            {
+                continue;
+            }
             <div class="card projectAnimated">
                 <img class="card-img-top" src="" alt="Card image cap">
                 <div class="card-body text-center">
                     <h5 class="card-title">@user.UserName</h5>
+                    <p class="text-muted">@user.Role</p>
                     <a href="/Home/DeleteProfile?userName=@user.UserName" class="btn btn-primary w-100">Изтрии потребителя</a>
                 </div>
             </div>

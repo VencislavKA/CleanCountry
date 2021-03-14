@@ -1,5 +1,6 @@
 ﻿namespace CleanCountry.Web.Controllers
 {
+
     using System.Linq;
 
     using CleanCountry.Data.Models;
@@ -21,7 +22,7 @@
 
         public IActionResult Index()
         {
-            var projects = this.Service.GetAllProjects().Where(x => x.Partisipants.Contains(this.UserManager.GetUserAsync(this.User).Result) && x.Creator == this.UserManager.GetUserAsync(this.User).Result).ToList();
+            var projects = this.Service.GetProjectsImIn(this.UserManager.GetUserId(this.User)).ToList();
             return this.View(projects);
         }
     }

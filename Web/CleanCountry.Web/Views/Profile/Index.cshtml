@@ -1,6 +1,7 @@
 ﻿@model ProfileViewModel
 @{
     ViewData["Title"] = "Profile";
+    
 }
 
 <div class="row py-5 px-4">
@@ -10,7 +11,7 @@
                 <div class="media align-items-end profile-head-profile">
                     <div class="profile mr-3">
                         <img src="@Model.Photo" alt="..." width="130" class="rounded mb-2 img-thumbnail">
-                        <a asp-area="Identity" asp-page="/Account/Manage/Index" class="btn btn-outline-info btn-sm btn-block">Edit profile</a>
+                        <a asp-area="Identity" asp-page="/Account/Manage/Index" class="btn btn-outline-info btn-sm btn-block">Редактирай профил</a>
                     </div>
                     <div class="media-body mb-5 text-white">
                         <h4 class="mt-0 mb-0">@Model.UserName</h4>
@@ -27,7 +28,7 @@
             </div>
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    @if (Model.Role == "Учасник")
+                    @if (Model.Role == "Уастник")
                     {
                         <h5 class="mb-0">Участия</h5>
                     }
@@ -49,7 +50,14 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title">@project.Title</h5>
                                 <p class="card-text">@project.Description</p>
-                                <a href="/Projects/DeleteProject?id=@project.Id&&userName=@this.User.Identity.Name&&backLink=/Profile/" class="btn btn-primary w-100">Изтрии проект</a>
+                                @if (Model.Role == "Уастник")
+                                {
+                                    <a href="/Projects/ExitProject?id=@project.Id" class='btn btn-primary w-100'>Напусни проект</a>
+                                }
+                                else
+                                {
+                                    <a href='/Projects/DeleteProject?id=@project.Id&&userName=@this.User.Identity.Name&&backLink=/Profile/' class='btn btn-primary w-100'>Изтрии проект</a>
+                                }
                             </div>
                             <div class="card-footer text-muted">Създадена на: @project.CreatedOn</div>
                         </div>

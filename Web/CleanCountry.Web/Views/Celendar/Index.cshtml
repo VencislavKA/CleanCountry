@@ -29,27 +29,37 @@
             @if ((i + 1) % 7 == 0 || i % 7 == 0)
             {
                 <td>
-                    <span class="weekend date">@i</span>
+                    <span class="weekend date">@i
+                        <ul>
                     @foreach (var project in @Model)
                     {
-                        @if (project.Date == new DateTime(DateTime.Today.Year, DateTime.Today.Month, i))
+                        @if (project.Date.Equals(new DateTime(DateTime.Today.Year, DateTime.Today.Month, i)))
                         {
-                            <a href="/Projects/Project/@project.Id">project.Title</a>
+                            <li>
+                                <span class="event"><a href="/Projects/Project?id=@project.Id">@project.Title</a></span>
+                            </li>
                         }
                     }
+                        </ul>
+                    </span>
                 </td>
             }
             else
             {
                 <td>
-                    <span class="date">@i</span>
-                    @foreach (var project in @Model)
-                    {
-                        @if (project.Date == new DateTime(DateTime.Today.Year, DateTime.Today.Month, i))
+                    <span class="date">@i
+                    <ul>
+                        @foreach (var project in @Model)
                         {
-                            <a href="/Projects/Project/@project.Id">project.Title</a>
+                            @if (project.Date.Equals(new DateTime(DateTime.Today.Year, DateTime.Today.Month, i)))
+                            {
+                                <li>
+                                    <span class="event"><a href="/Projects/Project?id=@project.Id">@project.Title</a></span>
+                                </li>
+                            }
                         }
-                    }
+                    </ul>
+                    </span>
                 </td>
             }
         }

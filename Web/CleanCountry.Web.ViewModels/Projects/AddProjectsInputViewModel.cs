@@ -24,6 +24,6 @@
 
         [Required(ErrorMessage = "Датата е задължителна")]
         [DataType(DataType.Date, ErrorMessage = "Датата е не валидна")]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

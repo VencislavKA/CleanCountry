@@ -18,7 +18,6 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Data.SqlClient.DataClassification;
-    
     using Microsoft.AspNetCore.Hosting;
 
     [Authorize]
@@ -155,14 +154,14 @@
                 return this.View();
             }
 
-            DateTime date;
-            DateTime.TryParseExact(model.Date, "yyyy-dd-MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
-            if (date == null)
+            //DateTime date;
+            //DateTime.TryParseExact(model.Date, "yyyy-dd-MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
+            if (model.Date == null)
             {
                 return this.View();
             }
 
-            string result = await this.Service.AddProjectAsync(model.Title, model.Description, imgPath, this.User.Identity.Name, date);
+            string result = await this.Service.AddProjectAsync(model.Title, model.Description, imgPath, this.User.Identity.Name, model.Date);
             if (result != null)
             {
                 return this.RedirectToAction("Index");

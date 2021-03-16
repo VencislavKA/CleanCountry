@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj": {}
+    "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj": {
+    "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj",
+        "projectUniqueName": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj",
         "projectName": "CleanCountry.Services.Mapping",
-        "projectPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj",
-        "packagesPath": "C:\\Users\\Ibryam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ibryam\\Desktop\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\obj\\",
+        "projectPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\CleanCountry.Services.Mapping.csproj",
+        "packagesPath": "C:\\Users\\Ventcy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ventcy\\Documents\\GitHub\\CleanCountry\\Services\\CleanCountry.Services.Mapping\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ibryam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ventcy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -68,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015203\\RuntimeIdentifierGraph.json"
         }
       }
     }

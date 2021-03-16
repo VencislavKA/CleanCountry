@@ -14,3 +14,4 @@ C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\ne
 C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.csproj.CoreCompileInputs.cache
 C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.pdb
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services\obj\Debug\netstandard2.1\CleanCountry.Services.csprojAssemblyReference.cache

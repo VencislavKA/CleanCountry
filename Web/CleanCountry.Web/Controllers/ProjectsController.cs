@@ -85,7 +85,7 @@
             }
 
             bool amIParticipiant = false;
-            if (project.Partisipants.Contains(this.UserManager.GetUserAsync(this.User).Result))
+            if (project.Partisipants.Contains(await this.UserManager.GetUserAsync(this.User)))
             {
                 amIParticipiant = true;
             }

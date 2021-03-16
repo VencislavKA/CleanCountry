@@ -81,7 +81,7 @@
                 return null;
             }
 
-            project.Partisipants.Remove(project.Partisipants.Single(x => x.Id == user.Id));
+            project.Partisipants.Remove(user);
             await this.Repository.SaveChangesAsync();
             return "Ready";
         }

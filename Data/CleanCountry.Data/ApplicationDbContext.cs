@@ -28,8 +28,6 @@
 
         public DbSet<Project> Projects { get; set; }
 
-        public DbSet<Chat> Chats { get; set; }
-
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

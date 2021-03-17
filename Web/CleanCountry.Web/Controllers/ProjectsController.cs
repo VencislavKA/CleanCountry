@@ -99,6 +99,7 @@
                 Images = project.Images,
                 Partisipant = amIParticipiant,
                 PartisipiantCoint = project.Partisipants.Count(),
+                Date = project.Date.ToString("MM / dd / yyyy"),
                 CreatedOn = project.CreatedOn.ToString(),
             };
             return this.View(result);

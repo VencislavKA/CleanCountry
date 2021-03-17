@@ -16,6 +16,8 @@
 
         public int PartisipiantCoint { get; set; }
 
+        public string Date { get; set; }
+
         public string CreatedOn { get; set; }
     }
 }

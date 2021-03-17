@@ -26,6 +26,7 @@
             <p>Участници: @Model.PartisipiantCoint</p>
             if (Model.CreatorName != this.User.Identity.Name)
             {
+                <p class="text-center text-danger">Имайте предвид че можете да участвате в един проект</p>
                 <a class="btn btn-info mt-3" href="/Projects/Join?id=@Model.id">Присъедини се!</a>
             }
         }

@@ -126,6 +126,22 @@ namespace CleanCountry.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Project_Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    UserId = table.Column<string>(nullable: true),
+                    ProjectId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Project_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Projects",
                 columns: table => new
                 {
@@ -251,6 +267,16 @@ namespace CleanCountry.Data.Migrations
                 column: "SettingsId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Project_Users_ProjectId",
+                table: "Project_Users",
+                column: "ProjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Project_Users_UserId",
+                table: "Project_Users",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Projects_CreatorId",
                 table: "Projects",
                 column: "CreatorId");
@@ -298,6 +324,22 @@ namespace CleanCountry.Data.Migrations
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
+                name: "FK_Project_Users_AspNetUsers_UserId",
+                table: "Project_Users",
+                column: "UserId",
+                principalTable: "AspNetUsers",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Project_Users_Projects_ProjectId",
+                table: "Project_Users",
+                column: "ProjectId",
+                principalTable: "Projects",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
                 name: "FK_Projects_AspNetUsers_CreatorId",
                 table: "Projects",
                 column: "CreatorId",
@@ -326,6 +368,9 @@ namespace CleanCountry.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Project_Users");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

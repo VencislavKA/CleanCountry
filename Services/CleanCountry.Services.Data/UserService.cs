@@ -10,15 +10,18 @@
 
     public class UserService : IUserService
     {
-        public UserService(IRepository<ApplicationUser> repository, IRepository<Project> projectRepository)
+        public UserService(IRepository<ApplicationUser> repository, IRepository<Project> projectRepository, IRepository<Project_User> p_Urepository)
         {
             this.Repository = repository;
             this.ProjectRepository = projectRepository;
+            this.P_Urepository = p_Urepository;
         }
 
         public IRepository<ApplicationUser> Repository { get; }
 
         public IRepository<Project> ProjectRepository { get; }
+
+        public IRepository<Project_User> P_Urepository { get; }
 
         public async Task<string> DeleteUserAsync(string userName)
         {
@@ -34,10 +37,10 @@
                 this.ProjectRepository.Delete(project);
             }
 
-            var projectsIn = this.ProjectRepository.All().Where(x => x.Partisipants.Contains(user));
+            var projectsIn = this.P_Urepository.All().Where(x => x.User == user).ToList();
             foreach (var project in projectsIn)
             {
-                project.Partisipants.Remove(user);
+                this.P_Urepository.Delete(project);
             }
 
             this.Repository.Delete(user);

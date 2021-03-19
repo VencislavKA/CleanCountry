@@ -203,6 +203,34 @@ namespace CleanCountry.Data.Migrations
                     b.ToTable("Projects");
                 });
 
+            modelBuilder.Entity("CleanCountry.Data.Models.Project_User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Project_Users");
+                });
+
             modelBuilder.Entity("CleanCountry.Data.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -343,18 +371,34 @@ namespace CleanCountry.Data.Migrations
                 {
                     b.HasOne("CleanCountry.Data.Models.Project", null)
                         .WithMany("Partisipants")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("CleanCountry.Data.Models.Setting", "Settings")
                         .WithMany()
-                        .HasForeignKey("SettingsId");
+                        .HasForeignKey("SettingsId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("CleanCountry.Data.Models.Project", b =>
                 {
                     b.HasOne("CleanCountry.Data.Models.ApplicationUser", "Creator")
                         .WithMany()
-                        .HasForeignKey("CreatorId");
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("CleanCountry.Data.Models.Project_User", b =>
+                {
+                    b.HasOne("CleanCountry.Data.Models.Project", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("CleanCountry.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

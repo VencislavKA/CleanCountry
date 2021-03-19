@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Reflection;
+    using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@
 
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -27,6 +29,8 @@
         public DbSet<Setting> Settings { get; set; }
 
         public DbSet<Project> Projects { get; set; }
+
+        public DbSet<Project_User> Project_Users { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -67,9 +71,9 @@
                 method.Invoke(null, new object[] { builder });
             }
 
-            // Disable cascade delete
+            // Sets cascade delete
             var foreignKeys = entityTypes
-                .SelectMany(e => e.GetForeignKeys().Where(f => f.DeleteBehavior == DeleteBehavior.Cascade));
+                .SelectMany(e => e.GetForeignKeys());
             foreach (var foreignKey in foreignKeys)
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;

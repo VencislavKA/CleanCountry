@@ -105,7 +105,7 @@
             return this.View(result);
         }
 
-        public async Task<IActionResult> ExitProject(int id)
+        public async Task<IActionResult> ExitProject(int id, string? link)
         {
             Project project = await this.Service.GetProjectAsync(id);
             if (project == null)
@@ -124,7 +124,12 @@
                 return this.RedirectToAction("Index");
             }
 
-            return this.Redirect("/Projects/Project?id=" + id.ToString());
+            if (link == null)
+            {
+                return this.Redirect("/Projects/Project?id=" + id.ToString());
+            }
+
+            return this.Redirect(string.Empty + link);
         }
 
         public async Task<IActionResult> AddProject()
@@ -185,7 +190,7 @@
                 return this.RedirectToAction("Index");
             }
 
-            if (user.Role == Role.Admin || this.Service.GetMyProjects(user.Id).Contains(project))
+            if (user.Role == Role.Admin || project.Creator == user)
             {
                 var result = await this.Service.DeleteProjectAsync(project.Id, this.User.Identity.Name);
                 if (result == null)

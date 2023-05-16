@@ -4,7 +4,7 @@
   Clean Country
   <br>
 </h1>
-## Key Features
+# Key Features
 
 * Creating a post about cleaning specific locations
 * Showing activiti in events

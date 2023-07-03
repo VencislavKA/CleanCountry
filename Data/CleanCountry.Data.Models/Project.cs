@@ -30,7 +30,6 @@
 
         public DateTime Date { get; set; }
 
-        [Required]
         public List<ApplicationUser> Partisipants { get; set; }
     }
 }

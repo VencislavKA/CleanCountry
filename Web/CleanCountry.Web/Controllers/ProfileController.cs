@@ -41,7 +41,7 @@
             if (user.Role == Role.Partisipient)
             {
                 role = "Уастник";
-                projects = this.ProjectsService.GetProjectsImIn(user.Id).ToList();
+                projects = this.ProjectsService.GetProjectsImInAsync(user.Id).Result.ToList();
             }
             else if (user.Role == Role.Organizator)
             {

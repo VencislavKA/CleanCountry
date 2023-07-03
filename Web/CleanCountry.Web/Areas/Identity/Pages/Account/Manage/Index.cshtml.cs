@@ -34,7 +34,6 @@
 
         public class InputModel
         {
-            [Phone]
             [Display(Name = "Ново потребителско име")]
             public string PhoneNumber { get; set; }
         }
@@ -81,7 +80,7 @@
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)
             {
-                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
+                var setPhoneResult = await _userManager.SetUserNameAsync(user, Input.PhoneNumber);
                 if (!setPhoneResult.Succeeded)
                 {
                     StatusMessage = "Възникна грешка.";

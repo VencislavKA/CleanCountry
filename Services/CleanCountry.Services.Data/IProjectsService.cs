@@ -17,7 +17,7 @@
 
         public Task<string> DeleteProjectAsync(int projectId, string userName);
 
-        public ICollection<Project> GetProjectsImIn(string id);
+        public Task<ICollection<Project>> GetProjectsImInAsync(string id);
 
         public ICollection<Project> GetAllProjects();
 

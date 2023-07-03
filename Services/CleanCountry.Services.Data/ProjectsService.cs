@@ -5,7 +5,7 @@
     using System.Data;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using AutoMapper.Configuration.Conventions;
     using CleanCountry.Data.Common.Repositories;
     using CleanCountry.Data.Models;
     using CleanCountry.Web.ViewModels.Projects;
@@ -17,11 +17,13 @@
         public ProjectsService(
             IRepository<Project> repository,
             IRepository<ApplicationUser> userRepository,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager,
+            IRepository<Project_User> p_Urepository)
         {
             this.Repository = repository;
             this.UserRepository = userRepository;
             this.UserManager = userManager;
+            this.P_Urepository = p_Urepository;
         }
 
         public IRepository<Project> Repository { get; }
@@ -29,6 +31,8 @@
         public IRepository<ApplicationUser> UserRepository { get; }
 
         public UserManager<ApplicationUser> UserManager { get; }
+
+        public IRepository<Project_User> P_Urepository { get; }
 
         public async Task<string> AddProjectAsync(string title, string description, string imgPath, string creatorName, DateTime date)
         {
@@ -57,8 +61,9 @@
                 return null;
             }
 
-            project.Partisipants.Add(user);
-            await this.Repository.SaveChangesAsync();
+            var partisipient = new Project_User() { User = user, Project = project };
+            await this.P_Urepository.AddAsync(partisipient);
+            await this.P_Urepository.SaveChangesAsync();
             return "Ready";
         }
 
@@ -76,43 +81,59 @@
                 return null;
             }
 
-            if (!project.Partisipants.Contains(user))
+            var p_U = await this.P_Urepository.All().Include(x => x.Project).Include(x => x.User).FirstOrDefaultAsync(x => x.Project == project && x.User == user);
+            if (p_U == null)
             {
                 return null;
             }
 
-            project.Partisipants.Remove(project.Partisipants.Single(x => x.Id == user.Id));
+            project.Partisipants.Clear();
             await this.Repository.SaveChangesAsync();
+            this.P_Urepository.Delete(p_U);
+            await this.P_Urepository.SaveChangesAsync();
             return "Ready";
         }
 
-        public ICollection<Project> GetProjectsImIn(string id)
+        public async Task<ICollection<Project>> GetProjectsImInAsync(string id)
         {
-            var user = this.UserRepository.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
+            var user = await this.UserRepository.AllAsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
             if (user == null)
             {
                 return null;
             }
 
-            return this.Repository.AllAsNoTracking().Include(x => x.Partisipants).Where(x => x.Partisipants.Contains(user)).ToList();
+            return await this.P_Urepository.AllAsNoTracking().Include(x => x.User).Include(x => x.Project).Where(x => x.User == user).Select(x => x.Project).ToListAsync();
+
+            //return this.Repository.AllAsNoTracking().Include(x => x.Partisipants).Where(x => x.Partisipants.Contains(user)).ToList();
         }
 
-        public ICollection<Project> GetAllProjects() => this.Repository.AllAsNoTracking().Select(x => x).ToList();
+        public ICollection<Project> GetAllProjects() => this.Repository.AllAsNoTracking().Include(x => x.Creator).Select(x => x).ToList();
 
-        public async Task<Project> GetProjectAsync(int id) => await this.Repository.All().Select(x => x).Include(x => x.Partisipants).FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Project> GetProjectAsync(int id)
+        {
+           var project = await this.Repository.All().Select(x => x).Include(x => x.Creator).FirstOrDefaultAsync(x => x.Id == id);
+           project.Partisipants = await this.P_Urepository.All().Include(x => x.Project).Include(x => x.User).Where(x => x.Project.Id == id).Select(x => x.User).ToListAsync();
+           return project;
+        }
 
-        public ICollection<Project> GetMyProjects(string id) => this.Repository.AllAsNoTracking().Where(x => x.Creator.Id == id).Include(x => x.Creator).ToList();
+        public ICollection<Project> GetMyProjects(string id) => this.Repository.AllAsNoTracking().Include(x => x.Creator).Where(x => x.Creator.Id == id).ToList();
 
         public async Task<string> DeleteProjectAsync(int projectId, string userName)
         {
             var user = await this.UserManager.FindByNameAsync(userName);
-            var project = await this.Repository.All().FirstOrDefaultAsync(x => x.Id == projectId);
+            var project = await this.Repository.All().Include(x => x.Creator).FirstOrDefaultAsync(x => x.Id == projectId);
             if (user == null)
             {
                 return null;
             }
             else if (user.Role == Role.Admin || project.Creator == user)
             {
+                foreach (var item in this.P_Urepository.All().Where(x => x.Project == project).ToList())
+                {
+                    this.P_Urepository.Delete(item);
+                }
+
+                project.Partisipants.Remove(user);
                 this.Repository.Delete(project);
                 await this.Repository.SaveChangesAsync();
                 return "Ready";

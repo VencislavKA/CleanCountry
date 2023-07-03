@@ -18,7 +18,6 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Data.SqlClient.DataClassification;
-    
     using Microsoft.AspNetCore.Hosting;
 
     [Authorize]
@@ -53,13 +52,18 @@
             if (project == null)
             {
                 // има грешка в id-то и препращаме към страницата с проектите
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
+            }
+
+            if (project.Creator.UserName == this.User.Identity.Name)
+            {
+                return this.RedirectToAction("Index");
             }
 
             var result = await this.Service.JoinProjectAsync(id, this.User.Identity.Name);
             if (result == null)
             {
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
             return this.Redirect("/Projects/Project?id=" + id.ToString());
@@ -77,11 +81,11 @@
             if (string.IsNullOrEmpty(project.Title))
             {
                 // има грешка в id-то и препращаме към страницата с проектите
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
             bool amIParticipiant = false;
-            if (project.Partisipants.Contains(this.UserManager.GetUserAsync(this.User).Result))
+            if (project.Partisipants.Contains(await this.UserManager.GetUserAsync(this.User)))
             {
                 amIParticipiant = true;
             }
@@ -89,32 +93,43 @@
             var result = new ProjectViewModel()
             {
                 id = project.Id,
+                CreatorName = project.Creator.UserName,
                 Title = project.Title,
                 Description = project.Description,
                 Images = project.Images,
                 Partisipant = amIParticipiant,
                 PartisipiantCoint = project.Partisipants.Count(),
+                Date = project.Date.ToString("MM / dd / yyyy"),
                 CreatedOn = project.CreatedOn.ToString(),
             };
             return this.View(result);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> ExitProject(int id)
+        public async Task<IActionResult> ExitProject(int id, string? link)
         {
             Project project = await this.Service.GetProjectAsync(id);
             if (project == null)
             {
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
+            }
+
+            if (project.Creator.UserName == this.User.Identity.Name)
+            {
+                return this.RedirectToAction("Index");
             }
 
             var result = await this.Service.ExitProjectAsync(id, this.User.Identity.Name);
             if (result == null)
             {
-                this.RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
-            return this.Redirect("/Projects/Project?id=" + id.ToString());
+            if (link == null)
+            {
+                return this.Redirect("/Projects/Project?id=" + id.ToString());
+            }
+
+            return this.Redirect(string.Empty + link);
         }
 
         public async Task<IActionResult> AddProject()
@@ -145,14 +160,14 @@
                 return this.View();
             }
 
-            DateTime date;
-            DateTime.TryParseExact(model.Date, "yyyy-dd-MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
-            if (date == null)
+            //DateTime date;
+            //DateTime.TryParseExact(model.Date, "yyyy-dd-MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
+            if (model.Date == null)
             {
                 return this.View();
             }
 
-            string result = await this.Service.AddProjectAsync(model.Title, model.Description, imgPath, this.User.Identity.Name, date);
+            string result = await this.Service.AddProjectAsync(model.Title, model.Description, imgPath, this.User.Identity.Name, model.Date);
             if (result != null)
             {
                 return this.RedirectToAction("Index");
@@ -175,7 +190,7 @@
                 return this.RedirectToAction("Index");
             }
 
-            if (user.Role == Role.Admin || this.Service.GetMyProjects(user.Id).Contains(project))
+            if (user.Role == Role.Admin || project.Creator == user)
             {
                 var result = await this.Service.DeleteProjectAsync(project.Id, this.User.Identity.Name);
                 if (result == null)

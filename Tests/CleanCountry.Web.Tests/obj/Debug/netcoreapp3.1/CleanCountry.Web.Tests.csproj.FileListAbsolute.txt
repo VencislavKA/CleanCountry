@@ -526,3 +526,10 @@ C:\Users\Ibryam\Desktop\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netc
 C:\Users\Ibryam\Desktop\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.dll
 C:\Users\Ibryam\Desktop\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.pdb
 C:\Users\Ibryam\Desktop\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.genruntimeconfig.cache
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.csprojAssemblyReference.cache
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.AssemblyInfoInputs.cache
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.AssemblyInfo.cs
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.dll
+C:\Users\Ventcy\Documents\GitHub\CleanCountry\Tests\CleanCountry.Web.Tests\obj\Debug\netcoreapp3.1\CleanCountry.Web.Tests.pdb

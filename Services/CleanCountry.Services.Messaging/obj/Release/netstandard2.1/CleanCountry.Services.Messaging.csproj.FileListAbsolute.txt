@@ -1,9 +1,0 @@
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\bin\Release\netstandard2.1\CleanCountry.Services.Messaging.deps.json
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\bin\Release\netstandard2.1\CleanCountry.Services.Messaging.dll
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\bin\Release\netstandard2.1\CleanCountry.Services.Messaging.pdb
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\obj\Release\netstandard2.1\CleanCountry.Services.Messaging.csprojAssemblyReference.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\obj\Release\netstandard2.1\CleanCountry.Services.Messaging.AssemblyInfoInputs.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\obj\Release\netstandard2.1\CleanCountry.Services.Messaging.AssemblyInfo.cs
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\obj\Release\netstandard2.1\CleanCountry.Services.Messaging.csproj.CoreCompileInputs.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\obj\Release\netstandard2.1\CleanCountry.Services.Messaging.dll
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Services\CleanCountry.Services.Messaging\obj\Release\netstandard2.1\CleanCountry.Services.Messaging.pdb

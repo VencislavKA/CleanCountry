@@ -1,9 +1,0 @@
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\bin\Release\netstandard2.1\CleanCountry.Web.Infrastructure.deps.json
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\bin\Release\netstandard2.1\CleanCountry.Web.Infrastructure.dll
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\bin\Release\netstandard2.1\CleanCountry.Web.Infrastructure.pdb
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\obj\Release\netstandard2.1\CleanCountry.Web.Infrastructure.csprojAssemblyReference.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\obj\Release\netstandard2.1\CleanCountry.Web.Infrastructure.AssemblyInfoInputs.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\obj\Release\netstandard2.1\CleanCountry.Web.Infrastructure.AssemblyInfo.cs
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\obj\Release\netstandard2.1\CleanCountry.Web.Infrastructure.csproj.CoreCompileInputs.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\obj\Release\netstandard2.1\CleanCountry.Web.Infrastructure.dll
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Web\CleanCountry.Web.Infrastructure\obj\Release\netstandard2.1\CleanCountry.Web.Infrastructure.pdb

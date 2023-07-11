@@ -1,9 +1,0 @@
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\bin\Release\netstandard2.1\CleanCountry.Data.Common.deps.json
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\bin\Release\netstandard2.1\CleanCountry.Data.Common.dll
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\bin\Release\netstandard2.1\CleanCountry.Data.Common.pdb
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\obj\Release\netstandard2.1\CleanCountry.Data.Common.csprojAssemblyReference.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\obj\Release\netstandard2.1\CleanCountry.Data.Common.AssemblyInfoInputs.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\obj\Release\netstandard2.1\CleanCountry.Data.Common.AssemblyInfo.cs
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\obj\Release\netstandard2.1\CleanCountry.Data.Common.csproj.CoreCompileInputs.cache
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\obj\Release\netstandard2.1\CleanCountry.Data.Common.dll
-C:\Users\Ventcy\Documents\GitHub\CleanCountry\Data\CleanCountry.Data.Common\obj\Release\netstandard2.1\CleanCountry.Data.Common.pdb
